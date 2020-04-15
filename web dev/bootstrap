@@ -1,0 +1,35 @@
+-----------------------------------------Grid System--------------------------------------------------
+
+→ Extra smal device (mobile phone) Bootstrap-Class: .col-xs-“number of coloms“
+→ Smal device (tablets) Bootstrap-Class: .col-xs-“number of coloms“
+→ Medium device Bootstrap-Class: .col-xs-“number of coloms“
+→ Large device Bootstrap-Class: .col-xs-“number of coloms“
+
+
+---Layout mit bootstrap---
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-2'>
+			Left Sidebar
+		</div>
+		<div class='col-md-8'>
+			Main Content
+		</div>
+		<div class='col-md-2'>
+			Right Sidebar
+		</div>
+	</div>
+</div>
+
+-> Offset
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-offset-2'>
+			Left Sidebar
+		</div>
+		<div class='col-md-2'>
+			Right Sidebar
+		</div>
+	</div>
+</div>
+
