@@ -2,7 +2,7 @@
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
 <node TEXT="Programmierung von Datenbankanbindungen" FOLDED="false" ID="ID_413938028" CREATED="1584457451036" MODIFIED="1586016819641" STYLE="oval">
 <font SIZE="18"/>
-<hook NAME="MapStyle">
+<hook NAME="MapStyle" zoom="1.5">
     <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false"/>
 
 <map_styles>
@@ -63,7 +63,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="22" RULE="ON_BRANCH_CREATION"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="23" RULE="ON_BRANCH_CREATION"/>
 <node TEXT="AKID (Anforderung an eine Persistenzl&#xf6;sung)" POSITION="right" ID="ID_1554635783" CREATED="1584457483047" MODIFIED="1586003741163" HGAP_QUANTITY="14.749999977648258 pt" VSHIFT_QUANTITY="-35.249998949468164 pt">
 <edge COLOR="#ff0000"/>
 <node TEXT="A(Automarit&#xe4;t)" ID="ID_33095994" CREATED="1584457528345" MODIFIED="1584457542680">
@@ -104,6 +104,10 @@
 <node TEXT="jede Spalte representiert ein Attribut" ID="ID_1719272403" CREATED="1584610037525" MODIFIED="1584610069612"/>
 </node>
 <node TEXT="eindeutige Zuordnung &#xfc;ber Schl&#xfc;sselattribute" ID="ID_1284556123" CREATED="1584610146437" MODIFIED="1584610158690">
+<node TEXT="jeder Datensatz in einer Tabelle ist durch ein Schl&#xfc;ssel eindeutig identifizierbar" ID="ID_1561317368" CREATED="1587031705815" MODIFIED="1587031759425"/>
+<node TEXT="ein Attribut in einer Tabelle k&#xf6;nnte bspw. Nr hei&#xdf;en" ID="ID_962419503" CREATED="1587031761805" MODIFIED="1587031787476">
+<node TEXT="die Werte werden in der Tabelle f&#xfc;r jede n&#xe4;chste Spalte um eins erh&#xf6;t" ID="ID_24103678" CREATED="1587031788858" MODIFIED="1587031828832"/>
+</node>
 <node TEXT="Schl&#xfc;ssel referenziert einen Datensatz (eine Zeile)" ID="ID_780124141" CREATED="1584610201990" MODIFIED="1584610217647"/>
 </node>
 <node TEXT="Fremdschl&#xfc;ssel" ID="ID_193769916" CREATED="1584610287316" MODIFIED="1584610291813">
