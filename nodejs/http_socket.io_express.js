@@ -1,8 +1,10 @@
 var http = require('http');
 var express = require('express');
 var app = express();
-//http.createServer gibt http-server mit callback-function zurück. request-, response-objects werden
-//der callback-function bei jedem request übergeben. app ist die callback-function.
+//http.createServer gibt http-server mit callback-function zurück. request-, response-object 
+//werden der callback-function bei jedem request übergeben.
+//Im request-object befindet sich der request header, im response-object der response-header.
+//app ist die callback-function.
 var http_server = http.createServer(app);
 
 //bekommt http_server ein request mit switching-protocolls im header (101), dann sendet der http-server
@@ -14,9 +16,7 @@ var io = require('socket.io')(http_server);
 
 
 //http_server.listen() erstellt einen serverSocket, der bei erfolgreichem tcp-aufbau
-//dem Server-Programm die Adressen mitteilt. Das Server-Programm speichert die Adreesen
-//in ein socket und teilt dem Betriebssystem mit, dass es ein socket erstellen soll,
-//in dem die Adressen ebenfalls gespeichert werden. Bei einem request werden die Daten,
+//ein Socket erstellt. Bei einem request werden die Daten,
 //von dem Betriebssystem-Socket per ipc an den Server-Programm-Socket gesendet.
 //Das Server-Programm ließst die Daten aus dem socket und übergibt der callback-function
 //ein request und response Objekt. Beim aufruf von bspw. res.send() wird ein respone Objekt

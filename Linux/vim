@@ -34,3 +34,26 @@
 -> Tab schließen: :q oder :tabclose
 	->Datei befindet sich weiterhin im Buffer
 -> Alle Dateien im Buffer als Tabs öffnen: :tab ball
+
+--NERDTree--
+-> NERDTree aufrufen: :NERDTree
+-> Switch between windows: strg + ww
+-> Optionen anzeigen lassen: m
+-> Datei in neuem tab anzeigen: t
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,11 +4,16 @@
 
 ---IP (Internet Protokol)
 -> Das Internet Protokol (in Router/Computer implementiert) leitet Pakete von Netz
-	zu Netz weiter. 
+	zu Netz weiter. Dabei hat der Router/Computer min. zwei Netzwerkkarten: Eine 
+	mit der IP-Adresse für das lokale Netz und eine für ein anderes Netz. Ein 
+	Computer, der aus dem lokalen Netz Pakete sendet, schickt diese, mittels MAC über
+	den Switcht, an den Router/Computer (wird auch Gateway genannt). Dieser
+	leitet das Paket, über seine zweite Netzwerkkarte, an den ISP weiter bzw. an
+	den nächsten Router.  
 	Außerdem muss ein Computer innerhalb eines Netzes ein ARP-Request machen (Schicht 2).
 		-> Dabei sendet ein Computer ein Frame an alle LAN-Teilnehmer.
 			Entpackt der Computer, für den das Paket bestimmt war den 
-			Ethernet-Header (destination-ip korrekt), Speichert er 
+			IP-Header (destination-ip korrekt), Speichert er 
 			in seiner ARP-Tabelle die IP und zugehörige MAC des Senders.
 			Dann sendet er ein Response mittels der MAC an den Sender
 			(Switch-Tabelle steht MAC mit zugehörigem Port), der 
@@ -18,10 +23,10 @@
 	benutzt.
 
 ---Socket
--> Baut ein Computer zu einem anderen Computer eine Verbindung auf, sendet er ein IP-Paket mit einer TCP-Anfrage.
+-> Baut ein Computer zu einem anderen Computer eine Verbindung auf, sendet er ein Paket mit einer TCP-Anfrage. Dieses enthält: ethernet-, ip- und tcp-header.
 	-> Hat der Computer die Anfrage Akzeptiert, erstellt er ein Socket.
 		-> Der Sender kann jetzt IP-Pakete an den empfänger senden.
-		-> Die Daten im Payload (umschlossen von ethernet-header, ip-header,
+		-> Die Daten im Payload (befinden sich hinter dem Ethernet-header, ip-header,
 			tcp-header) werden an den Socket geleitet, von dem dan
 			die Daten vom Programm bzw. Prozess abgeholt werden.
 			-> Ein Socket ist also wie eine Datei, in die ein Programm (Client
@@ -51,6 +56,7 @@
 			zurück. 
 		-> Damit accept den Server-Socket vom OS abhören kann, brauch es 
 			die Socket-ID
+			
 	->Da sich das Server-Programm in einer Schleife befindet, ist es Blockiert und kann
 	wärend dessen keine anderen Aufgaben ausführen.
 
