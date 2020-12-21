@@ -2,7 +2,7 @@
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
 <node TEXT="Grundlegende Java-Web-Technologien" FOLDED="false" ID="ID_770559057" CREATED="1582971069867" MODIFIED="1585999914870" STYLE="oval">
 <font SIZE="18"/>
-<hook NAME="MapStyle" zoom="0.932">
+<hook NAME="MapStyle" zoom="1.5">
     <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false"/>
 
 <map_styles>

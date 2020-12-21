@@ -1,8 +1,10 @@
 var http = require('http');
 var express = require('express');
 var app = express();
-//http.createServer gibt http-server mit callback-function zurück. request-, response-objects werden
-//der callback-function bei jedem request übergeben. app ist die callback-function.
+//http.createServer gibt http-server mit callback-function zurück. request-, response-object 
+//werden der callback-function bei jedem request übergeben.
+//Im request-object befindet sich der request header, im response-object der response-header.
+//app ist die callback-function.
 var http_server = http.createServer(app);
 
 //bekommt http_server ein request mit switching-protocolls im header (101), dann sendet der http-server
@@ -19,4 +21,5 @@ var io = require('socket.io')(http_server);
 //sendet das OS die socket-id an den Prozess bzw. an die Funktion die sich in einer Schleife 
 //befindet. Die Schleife wird dann beendet und die Funktion gibt die Socket-ID zurück.
 //Mithilfe der Socket-ID kann der Server-Prozess in den Socket Schreiben und aus ihm Lesen.
+
 http_server.listen(8000);

@@ -2,7 +2,7 @@
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
 <node TEXT="programmierung von Gesch&#xe4;ftslogik" FOLDED="false" ID="ID_1585493965" CREATED="1583997325001" MODIFIED="1586857611580" STYLE="oval">
 <font SIZE="18"/>
-<hook NAME="MapStyle" zoom="1.003">
+<hook NAME="MapStyle" zoom="1.5">
     <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false"/>
 
 <map_styles>

@@ -88,7 +88,10 @@
 <node TEXT="@OneToMany&#xa;List&lt;Bewertungen&gt; bewertungen" ID="ID_52278703" CREATED="1586365222043" MODIFIED="1586365254112"/>
 <node TEXT="Assoziationstabelle" ID="ID_694367883" CREATED="1586365360322" MODIFIED="1586365367186">
 <node TEXT="Assoziationen zwischen zwei Objekten werden in einer Assoziationstabelle gespeichert (in der Datebank)" ID="ID_1448300522" CREATED="1586365368449" MODIFIED="1586365431070">
-<node TEXT="Beispiel:&#xa;in der Tabelle gibt es das Attribut Artikelnummer wobei eine Artikelnummer auf mehrere Bewertungen zeigen kann durch das Attribut Bewertung-ID" ID="ID_160400887" CREATED="1586365700922" MODIFIED="1586365842314"/>
+<node TEXT="Beispiel:&#xa;in der Tabelle gibt es das Attribut Artikelnummer wobei eine Artikelnummer auf mehrere Bewertungen zeigen kann durch das Attribut Bewertung-ID" ID="ID_160400887" CREATED="1586365700922" MODIFIED="1586365842314">
+<node TEXT="Artikel-Nummer ist ein Artikel" ID="ID_609427169" CREATED="1587053752701" MODIFIED="1587053769937"/>
+<node TEXT="Beispiel:&#xa;Artikel-Nummer 3 kommt in mehreren Spalten vor in denen verschiedene Bewertungs-IDs stehen." ID="ID_257091071" CREATED="1587053770375" MODIFIED="1587053935474"/>
+</node>
 </node>
 </node>
 </node>
