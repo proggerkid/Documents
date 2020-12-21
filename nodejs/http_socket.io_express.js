@@ -14,12 +14,9 @@ var io = require('socket.io')(http_server);
 
 
 //http_server.listen() erstellt einen serverSocket, der bei erfolgreichem tcp-aufbau
-//dem Server-Programm die Adressen mitteilt. Das Server-Programm speichert die Adreesen
-//in ein socket und teilt dem Betriebssystem mit, dass es ein socket erstellen soll,
-//in dem die Adressen ebenfalls gespeichert werden. Bei einem request werden die Daten,
-//von dem Betriebssystem-Socket per ipc an den Server-Programm-Socket gesendet.
-//Das Server-Programm ließst die Daten aus dem socket und übergibt der callback-function
-//ein request und response Objekt. Beim aufruf von bspw. res.send() wird ein respone Objekt
-//in den Programm-Socket geschrieben und an den Betriebssystem-Socket gesendet und anschließend
-//an dem tcp/ip stack übertragen.
+//ein Socket für die Verbindung erzeugt. Das Server-Programm erzeugt eine Schleife, in der 
+//es darauf wartet, bis der serverSocket ein socket erstellt hat. Wurde ein socket erstellt, 
+//sendet das OS die socket-id an den Prozess bzw. an die Funktion die sich in einer Schleife 
+//befindet. Die Schleife wird dann beendet und die Funktion gibt die Socket-ID zurück.
+//Mithilfe der Socket-ID kann der Server-Prozess in den Socket Schreiben und aus ihm Lesen.
 http_server.listen(8000);
