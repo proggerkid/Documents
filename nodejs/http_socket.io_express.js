@@ -21,5 +21,12 @@ var io = require('socket.io')(http_server);
 //sendet das OS die socket-id an den Prozess bzw. an die Funktion die sich in einer Schleife 
 //befindet. Die Schleife wird dann beendet und die Funktion gibt die Socket-ID zurück.
 //Mithilfe der Socket-ID kann der Server-Prozess in den Socket Schreiben und aus ihm Lesen.
-
 http_server.listen(8000);
+
+//-----Broadcasting-----//
+//-> Nachricht an alle User senden.
+//      3 Möglichkeiten: an alle User mit io.sockets.emit, an User in einem Namespace,
+//      oder an User in einem bestimmten Room.
+//-> Nachricht an alle senden auser an den der an den Server gesendet hat und somit den
+//      Broadcast ausgelöst hat socket.broadcast.emit()
+//

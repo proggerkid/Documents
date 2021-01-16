@@ -38,3 +38,11 @@
 
 --inline-block
 -> Wie inline, nur das die Positionierung funktioniert.
+
+--none
+-> Element wird nicht dargestellt. 
+
+
+
+
+
