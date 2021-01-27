@@ -1,0 +1,63 @@
+---Einführung
+-> Aufgaben des Requirements Engineering: Herausfinden und festlegen was ein zu 
+	erstellende System alles können soll, welche Funktionen werden im Detail gefordert?
+-> Vor der Konstruktion muss bestimmt werde, welches Ziel mit der Software erreicht werden soll.
+	-> Grobe Zielbestimmung erfolgt in der Phase Planung.
+-> Ausgehend vom Ziel der Software müssen alle Funktionen und Eigenschaften des Systems ermittelt werden, 
+	welche die Software nach Abschluss der Entwicklung unterstützen soll.
+-> Requirements Engineering: Ermittlung, Dokumentation, Abstimmung, Verwaltung.
+	-> Kooperativer, iterativer (Verfahren werden mehrmal durchlaufen), inkrementeller (nach 
+		jedem durchlauf kommen Anforderungen hinzu) Prozess.
+-> Ziele Requirements Engineering
+	-> Alle relevanten Anforderungen sollen bekannt und im Detail verstanden sein.
+	-> Alle Anforderungen müssen gemäß der Dokumentationsvorschriften dokumentiert und alle Spezifikationen
+		gemäß der Spezifikationsvorschriften spezifiziert sein.
+	-> Alle involvierten Stakeholder müssen ausreichende Übereinstimmungen über die Anforderungen haben.
+	
+---Kernaktivitäten des RE
+-> Ermittlung, Dokumentation, Prüfung und Abstimmung
+	-> Der Requirements Engineer entscheidet welche der drei Aktivitäten als nächstes durchgeführt wird.
+-> Ermittlung von Anforderungen
+	-> Indentifikation der Anforderung an das System die benötigt werden, damit die software ihr ziel erreichen kann.
+-> Dokumentation von Anforderungen
+	-> Sicherung des Kenntnisstandes für alle Stakeholder.
+		-> Dadurch kann sich jeder Beteiligte zur jeder Zeit einen Überblick verschaffen.
+	-> Anforderungsdokumente sich Bestandteil von rechtsgültigen Verträgen.
+		-> Mit diesen Dokumenten wird geprüft, ob der Softwarehersteller alle Leistungen erbracht hat.
+	-> Neben Texten können auch Grafiken (Softwaremodelle) eingesetzt werden. 	
+-> Prüfen und Abstimmen von Anforderungen
+	-> Dokumentierte Anforderungen Prüfen und mit relevanten Stakeholdern Abstimmen.
+	-> Durch das Prüfen der dokumentierten Anforderungen kann die Qualität bezüglich der Kriterien 
+		Inhalt, Dokumentation und Abgestimmtheit sichergestellt werden.
+			-> Hohe Dokumentationsqualität
+			-> Missverständnisse durch Mehrdeutigkeit vermieden
+			-> Konkurrierende Anforderungen identifiziert.
+			
+---Zusammenhang zwischen Problem, Anforderung und System.
+-> Unterscheiden der Anforderungen an das System von fachlichen Problemen
+	-> Das fachliche Problem wird durch die Anforderungen an das System gelöst: Problem --> Anforderungen.
+	-> Die Anforderungen (Eigenschaften Funktionen) and das System werden benötigt,
+		das Problem zu lösen: Problem -ist Auslöser für-> Anforderungen -Stellen Forderungen an-> System -Ist lösung für-> Problem
+		Dabei ist das System die Art wie das Problem gelöst wird und nicht die Software, die Software muss die 
+		Anforderung erfüllen um mit dem gewählten System das Problem zu lösen.
+		-> Das Fachliche Problem könnte sein: Welche Uhrzeit ist es zum Zeitpunkt XY.
+			Die Anforderungen können bspw. sein: Mechanische Uhr, elektrische Uhr, Uhr im Mobiltelefon.
+			Die Anforderung elektrischer Uhr löst das fachliche Problem, wenn diese Anforderung zur Uhrzeitbestimmung genutzt wird.
+				->Es gibt nun mehrere Alternativen an Anforderungen an das System um das fachliche Problem zu lösen.
+					-> sind die Unterschiede den Stakeholdern bekannt, stehen mehrere Alternativen zur Auswahl.
+					
+---Arten von Anforderungen
+-> Funktionale Anforderungen
+	-> Definieren Funktionen die von der Software bereitgestellt werden müssen.
+	-> Es sind fachliche Funktione wie: Anzeigen aller verfügbaren Waren, das Versenden einer Bestellung per Email...
+-> Qualitätseigenschaften
+	-> Qualitative Eigenschaften die Erfüllt werden müssen: 1000 Bestellvorgänge pro Sekunde, 
+		Reaktionsgeschwindigkeit von weniger als einer Sekunde.
+-> Randbedingungen 
+	-> Gesetze oder regulatorische Vorschriften von Behörden, firmeninterne Vorgaben und Richtlinien wie ein Corporate Style Guide 			oder die Vorgabe eines technischen Rahmens wie die Programmiersprache oder die Zielplattform wie Windows, Linux, Android 			oder iOS.
+		
+					
+					
+					
+					
+					

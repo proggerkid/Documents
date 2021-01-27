@@ -1,0 +1,10 @@
+-> Model
+	-> Managed: Daten, Logik und Regeln.
+	-> Empfängt Daten/Userinputs vom Controller die dann verarbeitet werden.	
+-> View
+	-> Darstellung der aus dem Model.
+
+-> Controller
+	-> Userinputs werden verarbeitet und dann an View oder Model weitergeleitet.
+	-> Validiert den Userinput.
+		
