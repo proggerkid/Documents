@@ -42,6 +42,35 @@
 --none
 -> Element wird nicht dargestellt. 
 
+--float
+-> floated man ein Element bspw. nach links (float: left;), erscheint es am 
+	linken, oberen Rand des Elternelementes und der Inhalt des Elternelementes
+	fließt um das gefloatede Element herum.
+
+-----margin-----
+--margin: 0 auto
+-> Zentriert das Element in der Mitte des Elternelementes.
+-> 0 bedeutet hier, dass top und bottom kein margin bekommt.
+-> Damit margin auto funktioniert, darf das Element nicht position: absolute oder fixed haben. 
+	Es sei denn, das Element hat left: 0; und right: 0;
+	-> Wenn margin: auto auto; also auch oben und unter zentriert werden soll, muss auch top: 0; bottom: 0;
+		sein oder position nicht absolute oder fixed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
