@@ -5,9 +5,9 @@
 	-> Grobe Zielbestimmung erfolgt in der Phase Planung.
 -> Ausgehend vom Ziel der Software müssen alle Funktionen und Eigenschaften des Systems ermittelt werden, 
 	welche die Software nach Abschluss der Entwicklung unterstützen soll.
--> Requirements Engineering: Ermittlung, Dokumentation, Abstimmung, Verwaltung.
+-> Requirements Engineering: Ermittlung, Dokumentation, Prüfen und Abstimmung, Verwaltung.
 	-> Kooperativer, iterativer (Verfahren werden mehrmal durchlaufen), inkrementeller (nach 
-		jedem durchlauf kommen Anforderungen hinzu) Prozess.
+		jedem durchlauf kommen Anforderungen hinzu/werden verfeinert) Prozess.
 -> Ziele Requirements Engineering
 	-> Alle relevanten Anforderungen sollen bekannt und im Detail verstanden sein.
 	-> Alle Anforderungen müssen gemäß der Dokumentationsvorschriften dokumentiert und alle Spezifikationen
@@ -22,7 +22,7 @@
 -> Dokumentation von Anforderungen
 	-> Sicherung des Kenntnisstandes für alle Stakeholder.
 		-> Dadurch kann sich jeder Beteiligte zur jeder Zeit einen Überblick verschaffen.
-	-> Anforderungsdokumente sich Bestandteil von rechtsgültigen Verträgen.
+	-> Anforderungsdokumente sind Bestandteil von rechtsgültigen Verträgen.
 		-> Mit diesen Dokumenten wird geprüft, ob der Softwarehersteller alle Leistungen erbracht hat.
 	-> Neben Texten können auch Grafiken (Softwaremodelle) eingesetzt werden. 	
 -> Prüfen und Abstimmen von Anforderungen
@@ -34,17 +34,18 @@
 			-> Konkurrierende Anforderungen identifiziert.
 			
 ---Zusammenhang zwischen Problem, Anforderung und System.
--> Unterscheiden der Anforderungen an das System von fachlichen Problemen
-	-> Das fachliche Problem wird durch die Anforderungen an das System gelöst: Problem --> Anforderungen.
-	-> Die Anforderungen (Eigenschaften Funktionen) and das System werden benötigt,
-		das Problem zu lösen: Problem -ist Auslöser für-> Anforderungen -Stellen Forderungen an-> System -Ist lösung für-> Problem
-		Dabei ist das System die Art wie das Problem gelöst wird und nicht die Software, die Software muss die 
-		Anforderung erfüllen um mit dem gewählten System das Problem zu lösen.
+-> Es besteht ein Problem, welches gelöst werden muss. Es gibt verschiedene lösungswege (Systeme), um das Problem zu lösen.
+	Für die verschiedenen Lösungswege/Systeme verden dann Anforderungen benötigt (Funktionen, Eigenschaften). 
 		-> Das Fachliche Problem könnte sein: Welche Uhrzeit ist es zum Zeitpunkt XY.
 			Die Anforderungen können bspw. sein: Mechanische Uhr, elektrische Uhr, Uhr im Mobiltelefon.
-			Die Anforderung elektrischer Uhr löst das fachliche Problem, wenn diese Anforderung zur Uhrzeitbestimmung genutzt wird.
-				->Es gibt nun mehrere Alternativen an Anforderungen an das System um das fachliche Problem zu lösen.
+			Die Anforderung elektrischer Uhr löst das fachliche Problem, wenn diese Anforderung als System zur Uhrzeitbestimmung 				genutzt wird.
+				->Es gibt nun mehrere Alternativen an Anforderungen, wenn man unterschiedliche Systeme betrachtet, die zur 
+					Lösung des Problems führen.
+					-> Stakeholder sollten deshalb wissen, dass es mehrere Lösungen/Systeme geben kann, nicht nur die
+						Anforderung elektrische Uhr kann das Problem lösen, sondern auch Uhr im Mobiltelefon.
 					-> sind die Unterschiede den Stakeholdern bekannt, stehen mehrere Alternativen zur Auswahl.
+-> Zusammengefasst: Dem Stakeholder muss bekannt sein, dass es auch andere Anforderungen gibt, die das Problem lösen können.
+
 					
 ---Arten von Anforderungen
 -> Funktionale Anforderungen

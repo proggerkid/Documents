@@ -12,6 +12,8 @@
 --absolute
 -> Das Element richtet sich relativ zum Elternelement hin aus, wenn
     das Elternelement nicht static ist, also der Standart.
+-> Das Element nimmt nicht mehr die komplette Zeile ein.
+-> Das Element berücksichtigt nicht die anderen Elemente.
 -> Das Element befindet sich nicht mehr im document-flow.
 
 --relative
@@ -55,7 +57,10 @@
 	Es sei denn, das Element hat left: 0; und right: 0;
 	-> Wenn margin: auto auto; also auch oben und unter zentriert werden soll, muss auch top: 0; bottom: 0;
 		sein oder position nicht absolute oder fixed.
-
+	-> Element muss float: none; sein.
+	-> Element muss display: block; sein.
+	-> Element darf kein auto width haben 
+		-> width muss angegeben sein z.B. width: 100%;
 
 
 
