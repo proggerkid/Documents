@@ -1,19 +1,12 @@
-//wurde die callbackfunction im Promise beendet, gibt Promise den Wert
-//der callbackfunction zurück.
-//Auf den Wert kann dann über result zugegriffen werden.
-getAllArticles(Article).then((result)=>{
-	res.render('articles', {articles: result});
-});
+//callback-function des Promise  führt find() aus und wird dann beendet.
+//find() führt dann die Datenbankabfrage, auf einem libuv-thread durch. Ist diese fertig, wird der cb von find() das 
+//Ergebnis mit gegeben. Die cb von find() wird auf den Stack geschoben und ausgeführt. 
+//Dabei wird resolve() daten übergeben und ausgeführt. 
+//Durch das ausführen von resolve() wird das Promise erfüllt und die Daten werden zurückgegeben (an die cb von then()).
 
-
-
-//Ein Promis wird erst beendet, wenn resolve() aufgerufen wird.
-//Im Promis wird find() in den stack geschoben, dabei wird find() im Hintergrund ausgeführt,
-//und der stack wird wieder frei. 
-//Hat find() die Daten geholt, werden die Daten der in find() definierten cb als Argument übergeben
-//und die cb wird in den stack geladen.
-//dann wird resolve() aufgerufen wodurch das Promis beendet wird.   	
 function getAllArticles(Article){
+	//Die Funktion Promise ist erst dann beendet, wenn resolve() oder reject aufgerufen werden,
+	//die dann Daten zurück geben.
 	return new Promise((resolve, reject)=>{
 		Article.find({}, (err, data)=>{
 			if(err){
@@ -24,3 +17,17 @@ function getAllArticles(Article){
 		});
 	});
 }
+
+
+
+
+
+
+
+getAllArticles(Article).then((result)=>{
+	res.render('articles', {articles: result});
+});
+
+
+   	
+

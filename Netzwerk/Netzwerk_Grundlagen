@@ -34,28 +34,28 @@
 			-> Sendet ein Programm eine größere Datei, Schreibt das Programm
 				in den Socket und TCP verpackt simultan die einkommenden
 				Daten im Socket in kleinere Pakete.
-			-> Empfängt ein Programm Daten in Form von Paketen, entpakt TCP die 					ankommenden Pakete und legt die Daten nach und nach im Socket 				ab, wo das Programm nach und nach die Daten abholt.	
+			-> Empfängt ein Programm Daten in Form von Paketen, entpakt TCP die ankommenden Pakete und legt die Daten nach und 					nach im Socket ab, wo das Programm nach und nach die Daten abholt.	
 			
 ---Socket Programmierung
 -> Ein Server-Socket muss vom OS erstellt werden, der für das Server-Programm eine
 	TCP-Verbindung abwickelt und das OS anschließend ein Socket für die Verbindung
 	erstellt.
-	-> Socket()
-		-> Rückgabewert ist die Socket-ID
+	-> ss = Socket()
+		-> Rüchgabewert ist ein Socket-Objekt.
 -> Der Server-Socket muss mit einer IP-Adresse und Port-Nummer versehen werden.
-	-> bind()
+	-> ss.bind(80)
 -> Bis hierhin wurde das erstellen des Server-Socket nur vorbereitet, dem OS wird
 	jetzt mitgeteilt, dass es den Server-Socket erstellen soll.
-	-> listen()
+	-> ss.listen()
+		-> Dem ss-object wird noch die server-socket-id vom os mitgeteilt.
 -> Das Server-Programm muss jetzt in einer Schleife ständing mittels IPC den Server-Socket
 	abhören, bis eine Verbindung zustande gekommen ist. Ist dies der fall, erstellt
 	das OS einen Socket für die Verbindung.
-	-> accept()
-		-> accept() erzeugt die Schleife und veranlast das OS einen Socket zu 
-			erstellen und gibt dann die ID des OS-Socket zur Indentifikation
-			zurück. 
+	-> s = ss.accept()
+		-> accept() erzeugt die Schleife. hat der server-socket ein socket erstellt, 
+			gibt accept ein socket-object incl. die ID des OS-Socket zur Indentifikation zurück. 
 		-> Damit accept den Server-Socket vom OS abhören kann, brauch es 
-			die Socket-ID
+			die Socket-ID vom server-socket.
 			
 	->Da sich das Server-Programm in einer Schleife befindet, ist es Blockiert und kann
 	wärend dessen keine anderen Aufgaben ausführen.

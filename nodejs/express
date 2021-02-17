@@ -43,7 +43,7 @@ app.use(consoleWriter);
 -----Coockies-----
 -> Paket cookie-parser wird benötigt.
 	-> Als globale Middleware: app.use(cookieParser());
--> Schreiben von cookies mit der cookie-function (cookie hinzufügen): req.coockie("cookiename", wert der variable) 
+-> Schreiben von cookies mit der cookie-function (cookie hinzufügen): res.cookie("cookiename", wert der variable) 
 -> Zum auslesen dient: req.coockies-collection
 -> Löschen von cookies mit: res.clearCoockie('name des coockies'); 
 -> Überprüfen ob der User ein cookie mitgesendet hat mit: req.cookies.cokiename ist undefined oder nicht		
