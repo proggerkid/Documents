@@ -28,7 +28,7 @@
 		
 ---Bestimmung der Quellen von Anforderungen---
 - Neben Umsystemen und Gesetzestexte haben Stakeholder den größtenteil an Anforderungen.
-- Mögliche Stakeholder, die Anforderungen haben, können sein:  Auftraggeber, Benutzer, Mitarbeiter der Rechtsabteilung oder auch Architekten und der IT-Betrieb sein.
+- Mögliche Stakeholder, die Anforderungen haben:  Auftraggeber, Benutzer, Mitarbeiter der Rechtsabteilung oder auch Architekten und der IT-Betrieb.
 - Durch Menge an unterschiedlichen Stakeholder gibt es meist unterschiedliche Vorstellungen an Anforderungen.
 	-> Beispiel: Auftraggeber investiert wenig Geld zur Entwicklung, dadurch ist GUI nicht ausgereift und Anwender suchen sich
 		Alternativen.
@@ -60,7 +60,7 @@
 
 		Positiv eingestellte Stakeholder halten, negativ eingestellte Stakeholder überzeugen: Positiv eingestellte Stakeholder sind durch aktive Einbeziehung und regelmäßige Informationsweitergabe 			zu bestärken, negativ eingestellte Stakeholder sind durch Erläuterung und Motivation zu überzeugen.
 
-		Festlegen von Aufgaben, Verantwortungsbereichen und Weisungsbefugnissen zur Vermeidung von Missverständnissen: Eine klare Zuteilung von Aufgaben und Verantwortungen fördern die Wertschätzung und vermeiden Gerangel um Kompetenz.		
+		Festlegen von Aufgaben, Verantwortungsbereichen und Weisungsbefugnissen zur Vermeidung von Missverständnissen: Eine klare Zuteilung von Aufgaben und Verantwortungen fördern die Wertschätzung 			und vermeiden Gerangel um Kompetenz.		
 	
 ---Arten von Dokumenten---
 	-> 	Leitlinien, Unternehmens- oder IT-Strategien, Nachhaltigkeitsberichten 
@@ -75,7 +75,7 @@
 	-> Weniger detaillierte Anforderungen.
 	-> Beispiele: Brainstorming, Perspektivwechsel.
 -Dokumentenzentrierte Techniken
-	-> Ermittlung grundlegender Anforderung da als Referenz bestehende Systeme oder Dokumentationen bestehender Systeme genutzt werden.
+	-> Ermittlung grundlegender Anforderung durch Benutzung von Referenzen bestehender Systeme oder Dokumentationen.
 		-> Anforderungen wurden in bereits bestehenden Systemen angewendet und werden nun wiederverwendet.
 	-> Beispiele: Systemaräologie, perspektivenbasiertes Lesen.
 -Beobachtungstechniken
