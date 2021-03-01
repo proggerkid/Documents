@@ -6,7 +6,7 @@
 -> Ausgehend vom Ziel der Software müssen alle Funktionen und Eigenschaften des Systems ermittelt werden, 
 	welche die Software nach Abschluss der Entwicklung unterstützen soll.
 -> Requirements Engineering: Ermittlung, Dokumentation, Prüfen und Abstimmung, Verwaltung.
-	-> Kooperativer, iterativer (Verfahren werden mehrmal durchlaufen), inkrementeller (nach 
+	-> Kooperativer, iterativer (Verfahren werden mehrmals durchlaufen), inkrementeller (nach 
 		jedem durchlauf kommen Anforderungen hinzu/werden verfeinert) Prozess.
 -> Ziele Requirements Engineering
 	-> Alle relevanten Anforderungen sollen bekannt und im Detail verstanden sein.
@@ -33,9 +33,9 @@
 			-> Missverständnisse durch Mehrdeutigkeit vermieden
 			-> Konkurrierende Anforderungen identifiziert.
 			
----Zusammenhang zwischen Problem, Anforderung und System.
+---Zusammenhang zwischen Problem, Anforderung und System (System zur lösung eines Problems).
 -> Es besteht ein Problem, welches gelöst werden muss. Es gibt verschiedene lösungswege (Systeme), um das Problem zu lösen.
-	Für die verschiedenen Lösungswege/Systeme verden dann Anforderungen benötigt (Funktionen, Eigenschaften). 
+	Für die verschiedenen Lösungswege/Systeme werden dann Anforderungen benötigt (Funktionen, Eigenschaften). 
 		-> Das Fachliche Problem könnte sein: Welche Uhrzeit ist es zum Zeitpunkt XY.
 			Die Anforderungen können bspw. sein: Mechanische Uhr, elektrische Uhr, Uhr im Mobiltelefon.
 			Die Anforderung elektrischer Uhr löst das fachliche Problem, wenn diese Anforderung als System zur Uhrzeitbestimmung 				genutzt wird.
