@@ -23,8 +23,7 @@
 				-> Beispiel: Hauptabteilungsleiter -> Abteilungsleiter -> Teamleiter -> Mitarbeiter
 			-> Eine Lienie von Oben nach unten (von Hauptabeilungsleiter bis Mitarbeiter) heißt Dienstweg.
 			-> Vorteile: Klare Weisungsbefugnis, Eindeutige Zuordnung von Stellen in der Hierarchie.
-			-> Nachteile: Lange Informationswege, da Kommunikations nur über die übergeordnete Ebene möglich ist und 					nicht z. B. von Teamleiter zu Teamleiter. Dadurch kann es zur Überforderung der übergeordneten 
-				Ebenen führen.
+			-> Nachteile: Lange Informationswege, da Kommunikations nur über die übergeordnete Ebene möglich ist und nicht z. B. von Teamleiter zu Teamleiter. Dadurch kann es zur 					Überforderung der übergeordneten Ebenen führen.
 		-> Mehrliniensystem
 			-> Mitarbeiter von Team A können sich direkt and den Teamleiter von Team B wenden und umgekehrt.
 				der weg über den Abteilungsleiter ist nicht weiter notwendig.
@@ -39,5 +38,26 @@
 - Ablauforganisation
 	-> Beschreibt den Ablauf innerhalb einer Aufbauorganisation.
 	-> Dokumentiert die Gestaltung der Arbeitsabläufe der Aufbauorganisation.
-		-> Verkettung der einzelnen Arbeitsschritte unter Nutzung der Ressourcen (Stellen, Abteilungen, Rollen, Instanzen, 				Aufgaben) der Aufbauorganisation.			
+		-> Verkettung der einzelnen Arbeitsschritte unter Nutzung der Ressourcen (Stellen, Abteilungen, Rollen, Instanzen, Aufgaben) der Aufbauorganisation.			
 	-> Die Ablauforganisation ist durch GPs definiert.
+	-> GPs können durch Teilprozesse und Aktivitäten verfeinert werden, eine Hierarchie entsteht wobei die oberste Ebene der GP ist.
+		-> Teilprozesse können in einer Menge von Aktivitäten zerlegt werden.
+		-> Ein GP kann mehrere Teilprozesse haben und die Teilprozesse werden durch mehrere Aktivitäten durchgeführt.
+		-> Aktivitäten können dann in einem Zug erledigt werden.
+- Unterschied zwischen Aufbau- und Ablauforganisation
+	-> Aufbauorganisation: Welche Aufgabn werden erledigt, von wem werden sie erledigt, mit welchen Sachmitteln werden sie erledigt.
+	-> Ablauforganisation: Wie werden die Aufgaben erledigt und in welcher Reihenfolge.
+- Elemente von Geschäftsprozessen
+	-> Prozesse können aus Teilprozessen bestehen und diese wieder aus Teilprozessen.
+	-> Prozesse/Teilprozesse bestehen aus Aktivitäten (Aktivitäten zur Erfüllung des Prozesses).
+	-> Nutzer: Führen Aktivitäten aus.
+	-> Rolle: Nutzer haben eine Rolle.
+	-> Organisationsheinheit: Nutzer bzw. Rolle gehört einer Organisationseinheit an z. B. Vertrieb.
+	-> Geschäftsobjekte: Werden in Aktivitäten erzeugt/bearbeitet.
+	-> Geschäftsregel: Beschreibt die Reihenfolge der auszuführenden Aktivitäten.
+	-> Ereignis: Löst Prozess aus.	
+	-> Zustand: In welchem Zustand sich eine Prozess/Geschäftsobjekt befindet.
+
+-----Business Process Model and Notation (BPMN)-----
+-> Notation zur Modelierung von Geschäftsprozessen.
+-> 
