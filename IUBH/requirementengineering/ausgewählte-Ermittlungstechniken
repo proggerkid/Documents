@@ -1,29 +1,28 @@
 - Menschliche, organisatorische und fachliche bzw. inhaltliche Faktoren haben Einfluss auf die Wahl der geeigneten Ermittlungstechnik.
 	-> Beispiel Menschliche Einflussfaktoren: Bei schlechte kommutative Fähigkeiten ist verbales Brainstorming nicht
 		geeignet.
-	-> Beispiel für fachliche/inhaltliche Einflussfaktoren: Wenn keine Erfahrung im Fachgebiet vorhanden ist, ist apprenticing eine 
-		geeignete Ermittlungstechnik. Oder: Grobe Anforderung gesucht, detaillierte Anforderung gesucht... .
-	-> Beispiel für organisatorische Einflussfaktoren: Bei hohe örtliche Verteilung der Stakeholder ist ein Fragebogen eine gute 			Ermittlungstechnik.
+	-> Beispiel für fachliche/inhaltliche Einflussfaktoren: Wenn keine Erfahrung im Fachgebiet vorhanden ist, ist apprenticing eine geeignete Ermittlungstechnik. Oder: Grobe Anforderung gesucht, detaillierte Anforderung gesucht... .
+	-> Beispiel für organisatorische Einflussfaktoren: Bei hohe örtliche Verteilung der Stakeholder ist ein Fragebogen eine gute Ermittlungstechnik.
 	
 ---Kreativitätstechniken---
 - Erhebung innovativer Anforderungen oder Systemvision (wie soll das System einmal aussehen).
-- Weniger zu Ermittlung von detaillierte Anforderungen geeignet.
+- Weniger zur Ermittlung von detaillierte Anforderungen geeignet.
 - Beispiel: Perspektivenwechsels, Brainstorming, verbales Brainstorming, Workshop.
 - Perspektivwechsel
 	-> Problem aus verschiedenen Blickwinkel betrachten.
 	-> Sechs-Hut-Denken (Variante des Perspektivwechsels)
-		-> Jeder Hut stellt eine Rolle dar, die der jeweilige Stakeholder annimmt, um das Problem von einem anderen Blickwinkel 			zu betrachten.
+		-> Jeder Hut stellt eine Rolle dar, die der jeweilige Stakeholder annimmt, um das Problem von einem anderen Blickwinkel zu betrachten.
 			-> Der weiße Hut steht für Objektivität und Neutralität. Der Stakeholder achtet vor allem auf Zahlen und Fakten.
 
-			-> Der rote Hut steht für eine subjektive Meinung und persönliche Empfindungen. Der Stakeholder äußert seine Gefühle, 					Ängste und Hoffnungen.
+			-> Der rote Hut steht für eine subjektive Meinung und persönliche Empfindungen. Der Stakeholder äußert seine Gefühle, Ängste und Hoffnungen.
 
 			-> Der schwarze Hut lässt den Stakeholder objektiv, aber negativ argumentieren.
 
 			-> Der gelbe Hut lässt einen Stakeholder auch objektiv, jedoch eher positiv argumentieren.
 
-			-> Der grüne Hut stellt die Kreativität in den Vordergrund. Der Stakeholder ist darauf bedacht neue Ideen 					einzubringen.
+			-> Der grüne Hut stellt die Kreativität in den Vordergrund. Der Stakeholder ist darauf bedacht neue Ideen einzubringen.
 
-			-> Der blaue Hut steht für Kontrolle und Organisation des gesamten Denkprozesses. Die Person mit dem blauen Hut 				moderiert und koordiniert den Prozess der Ideenfindung. Auch diese Perspektive wird von unterschiedlichen 					Stakeholdern eingenommen und nicht nur vom Requirements Engineer, der typischerweise moderiert.
+			-> Der blaue Hut steht für Kontrolle und Organisation des gesamten Denkprozesses. Die Person mit dem blauen Hut moderiert und koordiniert den Prozess der Ideenfindung. Auch diese Perspektive wird von unterschiedlichen Stakeholdern eingenommen und nicht nur vom Requirements Engineer, der typischerweise moderiert.
 	-> Einsatzszenarien
 
 		-> Wenn ein Gesamtüberblick über das Projekt gewonnen werden soll
@@ -67,7 +66,7 @@
 		
 - Schriftliches Brainstorming mit User-Stories
 	-> Schema: <<Benutzerrolle>> <<funktionale Anforderung>> <<Begründung, warum das Ziel erreicht werden soll>>
-		-> Beispiel: Als Kunde möchte ich meine Verträge online verwalten können, damit ich auch außerhalb der Geschäftszeiten 				Änderungen an meinen Verträgen vornehmen kann.		
+		-> Beispiel: Als Kunde möchte ich meine Verträge online verwalten können, damit ich auch außerhalb der Geschäftszeiten Änderungen an meinen Verträgen vornehmen kann.		
 		
 		-> Einsatzszenarien
 
@@ -91,10 +90,10 @@
 
 			-> Für begrenzte Teilnehmerzahl anwendbar
 
-			-> Die Spontaneität und Inspiration der eigenen Kreativität durch Ideen anderer geht verloren, wenn nur eine 					Iteration durchgeführt wird
+			-> Die Spontanität und Inspiration der eigenen Kreativität durch Ideen anderer geht verloren, wenn nur eine Iteration durchgeführt wird
 			
 - Workshop
-	-> Zusammenkinft verschiedener Interessensvertreter von Stakeholder-Gruppen.
+	-> Zusammenkunft verschiedener Interessensvertreter von Stakeholder-Gruppen.
 	-> Drei Phasen:
 		-Vorbereitung
 			-> RE definiert Ziele des Workshops.
@@ -136,9 +135,9 @@
 - Interview
 	-> Phase 1
 		-> RE muss Fachsprache beherrschen und nutzen.
-		-> Definition Interviewziele, Auswahl und Einladung der Teilnehmen, Gestaltung der Fragen.
+		-> Definition Interviewziele, Auswahl und Einladung der Teilnehmern, Gestaltung der Fragen.
 		-> Offene oder geschlossene Fragen
-		-> Bei geschlossene Fragen könnte man eine gerade Anzahl als Anwrotmöglichkeiten geben, damit der Stakeholder gezwungen 			wird, eine Tendenz zu liefern.
+		-> Bei geschlossene Fragen könnte man eine gerade Anzahl als Anwrotmöglichkeiten geben, damit der Stakeholder gezwungen wird, eine Tendenz zu liefern.
 	-> Phase 2
 		-> Durchführung beginnt mit der Vorstellung.
 		-> Danken.
@@ -149,7 +148,7 @@
 		-> RE muss Prüfen, ob er die Antworden richtig verstanden hat, daher muss er Rückmeldung geben.
 		-> RE fasst Ergebnisse zusammen, bedankt sich, äußert dem Befragten, dass er die Zusammenfassung ausgehändigt bekommt.
 	-> Phase 3
-		-> Aufbereitung der Protokolls.
+		-> Aufbereitung des Protokolls.
 		-> Protokoll zur Bestätigung an den Befragten senden.
 		
 	-> Einsatzszenarien
@@ -190,10 +189,10 @@
 
 		-> Implizites Wissen ist schlecht erfragbar
 
-		-> Der Requirements Engineer hat keinen Einfluss auf die Befragung und kann keine Verständnisfragen klären oder selbst 				nachfragen
+		-> Der Requirements Engineer hat keinen Einfluss auf die Befragung und kann keine Verständnisfragen klären oder selbst nachfragen
 		
 -----Beobachtungstechniken-----
-- Anforderungen sind für Stakeholder manchmal selbstverständlich und werden daher nicht geäußert. Beim Beobachten werden 			können sie dann ermittelt werden.
+- Anforderungen sind für Stakeholder manchmal selbstverständlich und werden daher nicht geäußert. Beim Beobachten können sie dann ermittelt werden.
 - Feldbeobachtung
 	-> RE beobachtet unmittelbar die Geschäftsprozesse.
 	-> RE Ermittelt Arbeitsabläufe.
@@ -219,7 +218,7 @@
 
 		-> Abläufe müssen beobachtbar sein
 
-		-> Der Requirements Engineer kann als Aufpasser wahrgenommen werden, was das Verhalten der Leute und damit die 				Anforderungen beeinflusst 		
+		-> Der Requirements Engineer kann als Aufpasser wahrgenommen werden, was das Verhalten der Leute und damit die Anforderungen beeinflusst 		
 		
 		
 - Apprentizing

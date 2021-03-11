@@ -1,6 +1,6 @@
 -----Grundlagen und Begriffe-----
 - Geschäftsprozess (GP)
-	-> Festgelegte Aufgaben die in festgelegter Reihenfolge ausgeführt werden um ein Ziehl zu erreichen.
+	-> Festgelegte Aufgaben (Aufbauorganisation) die in festgelegter Reihenfolge (Ablauforganisation) ausgeführt werden um ein Ziehl zu erreichen.
 		-> Aufgabe kann von einem Mitarbeiter in einem Zug, ohne Wechsel des Arbeitsplatzes, erledigen.
 	-> GP wird Arbeitsteilig ausgeführt.
 	-> GP dient der Erstellung von Leistung/Wertschöpfung. 
@@ -23,9 +23,9 @@
 				-> Beispiel: Hauptabteilungsleiter -> Abteilungsleiter -> Teamleiter -> Mitarbeiter
 			-> Eine Lienie von Oben nach unten (von Hauptabeilungsleiter bis Mitarbeiter) heißt Dienstweg.
 			-> Vorteile: Klare Weisungsbefugnis, Eindeutige Zuordnung von Stellen in der Hierarchie.
-			-> Nachteile: Lange Informationswege, da Kommunikations nur über die übergeordnete Ebene möglich ist und nicht z. B. von Teamleiter zu Teamleiter. Dadurch kann es zur 					Überforderung der übergeordneten Ebenen führen.
+			-> Nachteile: Lange Informationswege, da Kommunikations nur über die übergeordnete Ebene möglich ist und nicht z. B. von Teamleiter zu Teamleiter. Dadurch kann es zur Überforderung der übergeordneten Ebenen führen.
 		-> Mehrliniensystem
-			-> Mitarbeiter von Team A können sich direkt and den Teamleiter von Team B wenden und umgekehrt.
+			-> Mitarbeiter von Team A können sich direkt an den Teamleiter von Team B wenden und umgekehrt.
 				der weg über den Abteilungsleiter ist nicht weiter notwendig.
 			-> Vorteile: Kürzere Informationswege.
 			-> Nachteile: Kompetenzkonflikten.
@@ -60,4 +60,55 @@
 
 -----Business Process Model and Notation (BPMN)-----
 -> Notation zur Modelierung von Geschäftsprozessen.
--> 
+-> Elemente:
+	-> Aktivität: Nicht weiter aufteilbar (wird von einer Person in einem Zug ausgeführt).
+	-> Teilprozess: Besteht aus Aktivitäten und Teilprozessen.
+	-> Ereignisse: Startereignis, Ereignis, Endereignis.
+	-> Datenobjekte: Werden zur Ausführung von Aktivitäten gebraucht oder erzeugt (z. B. Schadensakte).
+	-> Pool/Organisationseinheit: Partitioniert Prozesse. Jeder Pool ist ein Teilprozess und benötigt daher ein Start- und Entereignis. Beinhaltet: Rollen, Aktivitäten, Teilprozesse... .
+	-> Können als Black Boxes dargestellt werden.
+	-> Lanes: Fassen Aufgaben zusammen z. B. Rollen.
+	-> Nachrichten: Nachrichtenflüsse oder als Bestandteil von Ereignissen z. B. Email als Startereignis.
+	-> Annotationen: Notizen, Kommentare.
+-> Verbindungen
+	-> Verbindungstypen: im BPMN gibt es: Sequenzfluss, Nachrichtenfluss und Assoziationen.
+		-> Sequenzfluss: Gibt Reihenfolge der Aktivitäten vor.
+			-> Können über Lane-Grenzen gehen aber nicht über Pool-Grenzen.
+		-> Nachrichtenfluss: Verbindet Pools miteinander.
+		-> Assotiationen: Verbinden Datenobjekte und Annotationen mit Flussobjekten (Aktivitäten, Prozessen).
+-> Gateways
+	-> Arten: Exklusive, inklusive, parallele und Ereignisbasierte Gateways.
+		-> Exklusives ODER XOR: Immer nur ein Sequenzfluss wird gegangen.
+			-> Zeichen: Raute mit X.
+		-> Logisches ODER OR: Es können mehrere Sequenzflüsse gegangen werden.
+			-> Zeichen: Raute mit O.
+		-> Parallele Gateways: Sequenzflüsse wrden gleichzeitig ausgeführt.
+			-> Zeichen: Raute mit +.
+		-> Ereignisbassierte Gateways: Auswahl der Sequenz in Abhängigkeit eines Ereignisses.
+			-> Zeichen: Raute mit zwei Kreisen und Pentagram in der Mitte.
+-----Modellierung mit Ereignisgesteuerten Prozessketten-----
+- Zur Modellierung von Betrieblichen Abläufen (wie BPMN).
+- Erweiterte ereignisgesteuerte Prozessketten (eEPK): Erhöhung der Ausdrucksmächtigkeit durch zusätzliche Elemente.
+- Hauptelemente
+	-> Funktionselement: Bearbeitung/Aktivität.
+	-> Ereigniselemente: Passive, trift selbst keine Entscheidungen.
+- Funtions- und Ereigniselement müssen sich immer Abwechseln F->E->F->E... .
+- Jeder Geschäftsprozess hat mindestens ein Start- und Endereignis.
+- Konnektoren
+	-> Split-Konnektoren teilen Kontrollflüsse auf, Join-Konnektoren führen Kontrollflüsse zu einen Kontrollfluss zusammen.
+	-> Ein Konnektor ist entweder ein Split oder ein Join.
+		-> Aber nie beider gleichzeitig.
+		-> Wurden Flüsse durch ein Split auf mehrere Flüsse aufgeteilt, müssen diese durch einen Join wieder zusammengeführt werden.
+	-> UND-Konnektor: Gleichzeitiges Ausführen der Ausgehenden Kontrollflüsse.
+		-> Symbol: Pyramide. 
+	-> ODER-Konnektor: Alternatives Ausführen der Ausgehenden Kontrollflüsse (mehrere Pfarde möglich).
+	-> XOR-Kontektor: Wie ODER aber nur ein Phad möglich.
+- eEPK
+	-> Organisationseinheit: Rolle, Nutzer, Organisationseinheit z. B. IT-Abteilung.
+		- Erscheinung: Gelb ausgefüllter ovaler Kreis.
+	-> Geschäftsobjekt: Z. B. Antrag.
+		Erscheinung: Rechteck das blau ausgefüllt ist.
+	-> Prozess bzw. Subprozess: Z. B. Antragsbearbeitung.
+		-> Erscheinung: Weißes Rechteck.
+	-> System: Z. B. Antragssystem.
+		-> Erscheinung: Blau ausgefülltes Rechteck mit 4 Strichen.

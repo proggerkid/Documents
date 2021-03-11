@@ -21,7 +21,7 @@
 - Kontextgrenze 
 	-> In ihr befinden sich der Systemkontext: Stakeholde, Dokumente, Umsysteme und das zu erstellende System mit seiner Systemgrenze.
 		-> In der Kontextgrenze befindet sich der, für das System relevante, Systemkontext. Alles was sich außerhalb 
-			der Systemgrenze befindet ist irrelevant.
+			der Kontextgrenze befindet ist irrelevant.
 	-> Analyse was zum Systemkontext gehört liefert Aufschluss welche Quellen für Anforderungen existieren.	
 	-> Kann sich wärend des Requirement Engineering ändern, evtl. gelangen andere Gesetzestexte, die vorher außerhalb der 
 		Kontextgrenze lagen, innerhalb des Systemkontexts.
@@ -77,7 +77,7 @@
 -Dokumentenzentrierte Techniken
 	-> Ermittlung grundlegender Anforderung durch Benutzung von Referenzen bestehender Systeme oder Dokumentationen.
 		-> Anforderungen wurden in bereits bestehenden Systemen angewendet und werden nun wiederverwendet.
-	-> Beispiele: Systemaräologie, perspektivenbasiertes Lesen.
+	-> Beispiele: Systemarchäologie, perspektivenbasiertes Lesen.
 -Beobachtungstechniken
 	-> Zur Gewinnung grundlegender Funktionalität durch Beobachtung und dokumentieren von Arbeitsabläufen.
 	-> Beispiele: Feldbeobachtung, Apprenticing.

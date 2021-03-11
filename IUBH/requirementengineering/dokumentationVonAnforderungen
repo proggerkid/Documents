@@ -50,13 +50,13 @@
 	-> Ausformulierung der Projektvision als Text.
 		-> Hilft dem Team als Verständnis über die Projektvision und Kommunikation mit den Stakeholdern.
 	-> Inhalt der Projektvision:
-		-> Zweck und Ziel des des Projektes (Was soll mit dem Projekt erreicht werden).
+		-> Zweck und Ziel des Projektes (Was soll mit dem Projekt erreicht werden).
 		-> Motivation für das Projekt (Gründe warum es das Projekt gibt).
 		-> Deteilebene der Anforderungen (Für welche Ziehlgruppe ist das Dokument). 
 - Überblicksebene
 	-> stellt Hauptfunktionen des Systems, die technischen Schnittstellen, die Nutzer sowie die Einordnung in die Systemlandschaft 			dar.
 - Detaillierte Anforderungen
-	-> Beschreibt die Anforderungen zu jeder Systemfunktion detailliert. Zu jeder Anforderung werden alle Informationen 			zusammengestellt, die das Entwicklungsteam benötigt, um mit der Implementierung des Systems zu beginnen. Das schließt 			insbesondere alle relevanten funktionalen Anforderungen, Qualitätsanforderungen und Randbedingungen ein. Diese 				Anforderungen können in Form von Texten, als Aufzählungen, Tabellen, fachliche Modelle, Referenzen auf externe 			Dokumente und Screenshots von Prototypen
+	-> Beschreibt die Anforderungen zu jeder Systemfunktion detailliert. Zu jeder Anforderung werden alle Informationen zusammengestellt, die das Entwicklungsteam benötigt, um mit der Implementierung des Systems zu beginnen. Das schließt insbesondere alle relevanten funktionalen Anforderungen, Qualitätsanforderungen und Randbedingungen ein. Diese Anforderungen können in Form von Texten, als Aufzählungen, Tabellen, fachliche Modelle, Referenzen auf externe Dokumente und Screenshots von Prototypen
 - Glossar
 	-> Abkürzungen die innerhalb eines Projektes verwendet werden.
 	-> Spezifische Begriffe erklären, die innzerhalb des Projektes verwendet werden.
