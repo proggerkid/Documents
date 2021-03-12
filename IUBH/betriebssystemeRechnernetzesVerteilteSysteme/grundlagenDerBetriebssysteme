@@ -1,0 +1,50 @@
+-----Grundlegender Aufbau von Computersystemen-----
+- CPU holt Befehle, wie eine Maschine, in Form von Maschinencode, aus dem Speicher und führt diese aus. Diesen Zyklus wiederholt die CPU bis der Computer ausgeschalten wird.
+	-> Einen Zyklus nennt man Von-Neumann-Zyklus.
+	-> Den Aufbau eines Computers/Rechners nennt man Von-Neumann-Architektur.
+	-> Alle modernen Rechner, vom Smartphone bis zum Hochleistungsserver, arbeiten nach diesem Prinzip.
+	-> Die Architektur wurde von John von Neumann 1945 vorgestellt.
+- Kernelemente der Von-Neumann-Architektur
+	-> Prozessor
+	-> Hauptspeicher
+	-> Ein-/Ausgabe-Komponenten
+	-> Kommunikationssystem
+- Prozessor besteht aus Steuerwerk und Rechenwerk.
+	-> Steuerwerk
+		-> Leitet die Ausführung des Programms.
+		-> Ladet Befehle in der richtigen Reihenfolge aus dem Hauptspeicher in den Prozessor.
+		-> Decodiert die Befehle.
+	-> Rechenwerk
+		-> Führt Berechnungen aus.
+		-> Ist mit arithmetischen und logischen Funktionen ausgestattet und wird deshalb auch ALU (Arithmetic Logical Unit) genannt.
+- Hauptspeicher
+	-> Wahlfreie Adressierbarkeit.
+		-> CPU hat wahlfreien Zugriff auf Daten und Instruktionen.
+	-> Organisiert in Zellen die jeweils eine Adresse haben.
+	-> Kleinste adressierbare Größe ist ein Byte.
+- Ein-/Ausgabe-Komponenten
+	-> Tastatur, Maus, Bildschirm, Festplatte, andere Computersysteme über Datennetze.
+-Kommunikationssysteme 					
+	-> Abwicklung der Kommunikation zwischen den Von-Neumann-Architektur-Elementen durch ein Bus-System.
+		-> Adressbus: CPU teilt RAM mit, aus welcher Speicherzelle ausgelesen werden soll.
+		-> Datenbus: Inhalt einer Speicherzelle wir an CPU geleitet.
+- Der Von-Neumann-Zyklus
+	-> Befehl Holen
+		-> CPU Schick, über den Adressbus, den Inhalt des Programmzähler an den RAM. RAM schickt den Inhalt der Speicherzelle, über den Datenbus, an die CPU.
+	-> Befehl decodieren
+		-> Die für jeden Prozessor spezifische Maschinensprache wird decodiert z. B. Addiere.
+	-> Operand Holen
+		-> Operand wird aus dem RAM geladen.
+	-> Befehl ausführen
+		-> Nachdem Das Steuerwerk alle Daten in den Prozessor geladen hat, führt das Rechenwerk die Operation aus.
+	-> Ergebnis speichern
+		-> Ergebnis in RAM Speichern oder Ergebnis in Register der CPU Zwischenspeichern.
+	- Will man zwei Operanden miteinander verrechnen, muss die CPU zwei Zyklen durchführen, beim ersten Zyklus wird der Operand in einem Registry der CPU zwischengespeichert.
+- Erweiterungen bei modernen Rechnersystemen
+	- Überlappungen der einzelnen Von-Neumann-Zyklen durch Befehls-Pipelining.
+		-> Die Einheiten die zur Bearbeitung der einzelnen Schritte notwendig sind, laufen Parallel.
+			-> Pro Taktschritt kann ein Befehl des Programmcodes fertiggestellt werden.
+				-> Idealfall: In jedem Taktschritt einen Von-Neumann-Zyklus durchlaufen.
+	- Nicht nur Berechnung von zwei Operanden in einem Taktschritt sondern Berechnung von vielen Operanden gleichzeitig.
+		-> Vektoreinheiten der Vektorverarbeitung bei x86-Architekturen sind: MMX, SSE, AVX... .
+			-> Erweiterung von Vektorbefehlen und Vektorregister.
