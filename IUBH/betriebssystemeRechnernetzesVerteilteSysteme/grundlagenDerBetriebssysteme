@@ -1,4 +1,6 @@
 -----Grundlegender Aufbau von Computersystemen-----
+- Ein Computer erfüllt eine Funktion wie eine Uhr, wobei die die Zahnräder einer Uhr mit Kinetischer Energie betrieben wird und
+	die Transistoren eines Computers mit Elektronen.
 - CPU holt Befehle, wie eine Maschine, in Form von Maschinencode, aus dem Speicher und führt diese aus. Diesen Zyklus wiederholt die CPU bis der Computer ausgeschalten wird.
 	-> Einen Zyklus nennt man Von-Neumann-Zyklus.
 	-> Den Aufbau eines Computers/Rechners nennt man Von-Neumann-Architektur.
@@ -48,3 +50,95 @@
 	- Nicht nur Berechnung von zwei Operanden in einem Taktschritt sondern Berechnung von vielen Operanden gleichzeitig.
 		-> Vektoreinheiten der Vektorverarbeitung bei x86-Architekturen sind: MMX, SSE, AVX... .
 			-> Erweiterung von Vektorbefehlen und Vektorregister.
+	- Parallele Verarbeitung also durch: Pipelining und Vektorverarbeitung aber auch Multicorsystemen.
+- Speicherhierarchie: Rigister 1ns, lvl1-cache 2ns, lvl2-cache 5ns, RAM 10ns, hdd 1000ns.  
+- Die Rolle des Betriebssystems
+	-> Laden der Programme in den Arbeitsspeicher.
+	-> Verwalten der Programme im Arbeitsspeicher.
+	-> Kernel
+		-> Software die vom Prozessor im privilegierten Modus ausgeführt wird.
+			-> Bedeutet: CPU hat Maschinenbefehle die auf die HW zugreift. Nur der Kernel sendet diese
+				Maschinenbefehle an die CPU. Sie Kernelsoftware kann nur ausgeführt werden, wenn
+				die CPU in dem privilegierten Modus geschaltet hat.
+		-> Nicht alle Maschinenbefehle dürfen von Programmen direkt ausgeführt werden. 
+			Es gibt auch Maschinenbefehle, die nur über Befehle des Betriebssystems (Kernel Mode) 
+			im Prozessor ausgeführt werden können.
+		-> Anwerndermodus (User Mode) Maschinenbefehle können direkt im Prozessor
+			ausgeführt werden.
+		-> Betriebssystemmodus (Kernel Mode) Maschinenbefehle werden über Betriebssystembefehele ausgeführt.
+		-> Kritische Maschinenbefehle sendet das OS bzw. der Kernel im Kernel Mode der CPU an die CPU,
+			da sie der HW schaden könnten.
+- Systemaufrufe
+	-> Will ein Programm auf die HW zugreifen, z. B. HDD oder Grafikkarte, macht es, über die Schnittstellen
+		des Betriebssystems, einen Funktionsaufruf. Das Betriebssystem sendet dann die entsprechenden Befehel,
+		in Form von Maschinencode, an die CPU, die sich im Kernel Mode befinden muss.
+		-> Bei einem Systemaufruf wird in den Betriebssystemmodus (Kernel Mode) gewechselt. Dabei Kommuniziert
+			Das Betriebssystem mit der CPU. Anschließend wir in den Anwerndermodus gewechselt, in dem Maschinencode
+			ausgeführt wird, der nicht auf die HW zugreift.
+	-> Systemaufrufe sind in Systembibliotheken gekapselt und stellen die
+		Schnittstellen für Systemaufrufe dar. Anwendungen greifen auf diese zu (Systemaufruf). 
+			-> In diesen Systembibliotheken sind Funktionen, die das Programm aufruft, das ist dann
+				ein Systemaufruf. 
+	-> Spezielle Maschinenbefehle der jeweiligen Prozessorfamilien veranlassen die CPU in den User- Kernel-Mode 
+		zu wechseln.
+	-> Eine Anwendung greift, wenn sie einen Systemaufruf macht, auf eine Funktion in der Systembibliothek zu, Dies
+		geschieht noch im User-Mode.
+		Der Kernel veranlasst dann, über einen Maschinenbefehl, dass die CPU in den Kernel-Mode schaltet.
+		Dann senden bspw. Treiber oder der Kernel selbst Maschinenbefehle an die CPU oder GPU.
+		Die CPU sendet dann die Befehle an die jeweilige HW.
+- Interrupt
+	-> Ein Interrupt-Controller verarbeitet bpsw. eingehende Signale von Peripferiegeräten und kann Interrupt-Signale
+		über eine spezielle Steuerleitung an die CPU senden. Die CPU Unterbricht dann die aktuelle Ausführung und das
+		Betriebssystem übernimmt die Ausführung.
+	-> Sprünge
+		-> Der Programmzähler enthält immer die Adresse des Nächsten Befehls, sodass die Befehle nacheinander
+			abgearbeitet werden.
+		-> Bei einem Sprung wird der Inhalt des Programmzälers auf die Adresse des Sprungziels gesetzt.
+		-> Bei Ausnahmen oder Unterbrechungen passiert ähnliches wie bei einem Sprungbefehl.
+			-> Programmzähler wird mit einer Zieladresse im Kernel gefüllt und dort wird die Abarbeitung 
+				fortgesetzt.
+				Der unterschied zwischen einen einfachen Sprunbefehl ist, dass der alte Wert des 
+				Programmzähler zwischengespeichert wird, sodass die abarbeitung des Prozesses wieder 
+				an richtiger Stelle aufgenommen werden kann.
+			-> Bei solch einer Unterbrechung Schaltet der Prozessor automatisch in den Kernel-Mode, sodass
+				das Betriebssystem auch privilegierte Maschinenbefehle senden kann.
+- Prozesse und Threads
+	-> Ein Prozess kann gleichzeitig von mehreren Kernen abgearbeitet werden, wenn bei der Programmierung 
+		Threads benutzt wurden.
+- Der Wechsel zwischen verschiedenen Prozessen (auch kooperatives-Multitasking genannt)
+	-> Prozesse bestehen nicht nur aus Maschineninstruktionen, sondern auch aus Status wie
+		 bspw. der Stand des Programmzählers.
+		-> Betriebssystem verwaltet die Status in der Datenstruktur Prozesskontrollblock, die im RAM abgelegt ist.
+	-> Das Betriebssystem verwaltet die Prozesskontrollblöcke, wobei jeder Prozess einen Prozesskontrollblock besitzt.
+	-> Ist ein Prozess abgeschlossen erfolg ein Systemaufruf, durch den die Kontrolle der CPU and das 
+		Betriebssystem gegeben wird, das dann einen anderen Prozess die CPU-Zeit zur verfügung stellt.
+		-> Durch Speicherung des Programmzählers, kann der Prozess an der richtigen stelle weiter 
+			verarbeitet werden.
+	-> Bei jedem Prozesswechsel speichert die CPU den Inhalt des Programmzählers, sodass das Betriebssystem
+		 den Inhalt in dem Prozesskontrollblock des Prozesses im RAM speichern kann.
+		 -> Die CPU trägt bei einem Wechsel den Wert (Adresse im RAM) in das Programmzählerregister ein, womit die CPU 
+		 	mit der Abarbeitung beginnt.
+	-> Multitasking: Mehrere Prozesse werden durch Prozesswechsel "gleichzeitig" ausgeführt.
+	-> Multiprozessing: Gleichzeitige ausführung von Befehlen eines Prozesses durch Threads.
+- Prozesszustände und derne Übergänge
+	-> Beispiel: Prozess fordert Daten von der Festplatte durch ein Systemcall an.
+		Das Betriebssystem setzt dann den Zustand des Prozesses im Prozesskontrollblock des Prozesses auf Blockiert.
+		Das Betriebssystem leitet die Leseanfrage, über die CPU, an den Festplattencontroller weiter. Dieser
+		Ließt die Daten und speichert sie in einem Buffer zwischen.
+		Dann sendet Der Festplattencontroller ein Interruptsignal an die CPU. Das Betriebssystem stellt die 
+		Daten dem Prozess zur verfügung. Der Zustand wird jetzt von blockiert auf bereit gesetzt.
+- Präemptives Multitasking
+	-> Vor der Übergabe der CPU an ein Prozess wird ein "HW-Wecker" aufgezogen. Bei ablauf des Weckers, löst der
+		Interrupt-Controller automatisch eine Unterbrechung aus und das Betriebssystem bekommt die Kontrolle
+		über die CPU.
+- Threads
+	-> Zwei Arten: User Level Thread und Kernel Level Thread.
+		-> User level Thread
+			-> Betriebssystem weiß nichts von den Threads.
+			-> Können immer nur auf einer CPU/Kern laufen.
+		-> Kernel Level Threads
+			-> Threads werden wie Prozesse vom Betriebssystem behandelt.
+			-> Können auch auf zwei oder mehreren Kernen zur Ausführung gebracht werden. 
+	
+		
+		
