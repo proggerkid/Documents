@@ -1,5 +1,5 @@
 -----Grundlegender Aufbau von Computersystemen-----
-- Ein Computer erfüllt eine Funktion wie eine Uhr, wobei die die Zahnräder einer Uhr mit Kinetischer Energie betrieben wird und
+- Ein Computer erfüllt eine Funktion wie eine Uhr, wobei die Zahnräder einer Uhr mit Kinetischer Energie betrieben wird und
 	die Transistoren eines Computers mit Elektronen.
 - CPU holt Befehle, wie eine Maschine, in Form von Maschinencode, aus dem Speicher und führt diese aus. Diesen Zyklus wiederholt die CPU bis der Computer ausgeschalten wird.
 	-> Einen Zyklus nennt man Von-Neumann-Zyklus.
@@ -17,7 +17,7 @@
 		-> Ladet Befehle in der richtigen Reihenfolge aus dem Hauptspeicher in den Prozessor.
 		-> Decodiert die Befehle.
 	-> Rechenwerk
-		-> Führt Berechnungen aus.
+		-> Führt Befehle aus.
 		-> Ist mit arithmetischen und logischen Funktionen ausgestattet und wird deshalb auch ALU (Arithmetic Logical Unit) genannt.
 - Hauptspeicher
 	-> Wahlfreie Adressierbarkeit.
@@ -32,7 +32,8 @@
 		-> Datenbus: Inhalt einer Speicherzelle wir an CPU geleitet.
 - Der Von-Neumann-Zyklus
 	-> Befehl Holen
-		-> CPU Schick, über den Adressbus, den Inhalt des Programmzähler an den RAM. RAM schickt den Inhalt der Speicherzelle, über den Datenbus, an die CPU.
+		-> CPU Schick, über den Adressbus, den Inhalt des Programmzähler (Adresse zum nächsten Befehl im RAM) an den RAM.
+			 RAM schickt den Inhalt der Speicherzelle, über den Datenbus, an die CPU.
 	-> Befehl decodieren
 		-> Die für jeden Prozessor spezifische Maschinensprache wird decodiert z. B. Addiere.
 	-> Operand Holen
@@ -58,7 +59,7 @@
 	-> Kernel
 		-> Software die vom Prozessor im privilegierten Modus ausgeführt wird.
 			-> Bedeutet: CPU hat Maschinenbefehle die auf die HW zugreift. Nur der Kernel sendet diese
-				Maschinenbefehle an die CPU. Sie Kernelsoftware kann nur ausgeführt werden, wenn
+				Maschinenbefehle an die CPU. Die Kernelsoftware kann nur ausgeführt werden, wenn
 				die CPU in dem privilegierten Modus geschaltet hat.
 		-> Nicht alle Maschinenbefehle dürfen von Programmen direkt ausgeführt werden. 
 			Es gibt auch Maschinenbefehle, die nur über Befehle des Betriebssystems (Kernel Mode) 
@@ -78,7 +79,7 @@
 	-> Systemaufrufe sind in Systembibliotheken gekapselt und stellen die
 		Schnittstellen für Systemaufrufe dar. Anwendungen greifen auf diese zu (Systemaufruf). 
 			-> In diesen Systembibliotheken sind Funktionen, die das Programm aufruft, das ist dann
-				ein Systemaufruf. 
+				ein Systemaufruf. Die Funktionen senden also die Maschinenbefehle an die CPU.
 	-> Spezielle Maschinenbefehle der jeweiligen Prozessorfamilien veranlassen die CPU in den User- Kernel-Mode 
 		zu wechseln.
 	-> Eine Anwendung greift, wenn sie einen Systemaufruf macht, auf eine Funktion in der Systembibliothek zu, Dies
@@ -95,10 +96,12 @@
 			abgearbeitet werden.
 		-> Bei einem Sprung wird der Inhalt des Programmzälers auf die Adresse des Sprungziels gesetzt.
 		-> Bei Ausnahmen oder Unterbrechungen passiert ähnliches wie bei einem Sprungbefehl.
-			-> Programmzähler wird mit einer Zieladresse im Kernel gefüllt und dort wird die Abarbeitung 
-				fortgesetzt.
-				Der unterschied zwischen einen einfachen Sprunbefehl ist, dass der alte Wert des 
-				Programmzähler zwischengespeichert wird, sodass die abarbeitung des Prozesses wieder 
+			-> Programmzähler wird, nach einem interrupt, mit einer Zieladresse aus dem
+				Prozesskontrollblock gefüllt, sodass ein Prozess wieder an der richtigen stelle seine Ausführung
+				fortsetzen kann.
+				Der unterschied zwischen einen einfachen Sprungbefehl ist, dass der alte Wert des 
+				Programmzähler zwischengespeichert wird (im Prozesskontrollblock), 
+				sodass die abarbeitung des Prozesses wieder 
 				an richtiger Stelle aufgenommen werden kann.
 			-> Bei solch einer Unterbrechung Schaltet der Prozessor automatisch in den Kernel-Mode, sodass
 				das Betriebssystem auch privilegierte Maschinenbefehle senden kann.
@@ -139,6 +142,41 @@
 		-> Kernel Level Threads
 			-> Threads werden wie Prozesse vom Betriebssystem behandelt.
 			-> Können auch auf zwei oder mehreren Kernen zur Ausführung gebracht werden. 
-	
-		
-		
+----- Speicherverwaltung -----
+	-> OS verwaltet den Speicher durch Abstraktion.
+		-> Ein Prozess "glaubt", beim Präemptiven Multitasking, ihm gehöre alleine die CPU und ein Prozess "glaubt" 
+			ihm gehöre allein der Speicher.
+	-> Dynamische Speicherverwaltung
+		-> Prozess "weiß" erst zur Laufzeit, wie viel Speicher er benötigt, z. B. wird durch Userinteraktionen 
+			ein Objekt instanziiert, dieses Objekt befindet sich dann im Heap des Prozesses.
+				-> Bei jedem erzeugten Objekt wächst der Heap.
+	-> Durch ständiges Allokieren (Anfordern) von Speicherbereiche und wieder Freigeben, kann Speicher-Fragmentierung
+		entstehen. 
+		-> Zwischen den Allokierten Speicherbereichen sind kleine, freie Speicherbereiche vorhanden, 
+			können aber nicht genutzt werden, wenn größere Speicherbereiche benötigt werden.	
+	-> First Fit: Nächster passender Speicherbereich/Speicherblock wird gesucht.
+	-> Next Fit: Nachster passender Speicherblock wird gesucht aber von der Adresse des letzten
+		allokierten Speicherblockes.
+	-> Best Fit: Gesamter Adressraum wird durchsucht.
+	-> Worst Fit: Suche nach Speicherblock, der bei einer Zuteilung die größte Lücke hinterlässt.
+- Speicherschuntz und Multitasking
+	-> Schutz, damit Prozesse immer nur auf ihren eigenen Adressraum zugreifen können.
+	-> Schutz durch HW: Prozessor muss erkennen können, dass ein Prozess nicht Adressen verwendet die nicht in 
+		seinem Adressraum liegen.
+		-> Schutz durch Grenzregister in der CPU.
+- Logische und Physische Speicheradressen
+	-> CPU verarbeitet Prozesse mit logischen Adressen die, wenn Speicherzellen angesprochen werden, in physische
+		HW-Adresse umgerechnet werden müssen, also umrechnung bevor sie auf den Adressbus gelegt werden.
+		-> Umrechnung durch Memory Management Unit der CPU (MMU).
+			-> Größenregister: Länge des bewilligten Adressraums.
+			-> Verschieberegister: Startadresse.
+		-> Nachteil: Keine dynamische Speicherverwaltung... virtuelle Speicherverwaltung wird dazu benötigt.
+- Virtuelle Speicherverwaltung
+	-> Dynamische Speicherverwaltung möglich.
+	-> realisierung durch Paging.
+		-> Hauptspeicher wird in Seiten (Pages) eingeteilt.
+			-> werden vom Betriebssystem, im zusammenspiel mit der MMU, in Form von Tabellen, verwaltet.
+		-> In der Tabelle Steht, welcher Speicherblock bzw. welche Seite, an welcher Stelle im Speicher liegt.
+	-> Blöcke: der Physische Hauptspeicher wird in Blöcke eingeteilt.
+		-> Blöcke nennt man Kacheln oder Seitenrahmen (Pageframe).
+			-> Auf jede Kachel kann genau eine Seite abgelegt werden (Sie haben beide die selbe größe).

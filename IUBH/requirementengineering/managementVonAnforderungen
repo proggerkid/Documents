@@ -1,4 +1,4 @@
-- RE ist erkenntnisgetrieben, daher kommen neue Anforderungen hinzu, ältere ändern sich oder bleiben gleich.
+ - RE ist erkenntnisgetrieben, daher kommen neue Anforderungen hinzu, ältere ändern sich oder bleiben gleich.
 	-> Deshalb ändert sich der Status einer Anforderung, z. B. ist sie erst eine Idee, dann ein Konzept usw..
 - Eigenschaften von Anforderungen (Attribute)
 	-> Sind Metadaten (Daten die andere Daten beschreiben) von Anforderungen.
@@ -82,7 +82,7 @@
 	- Team Estimation Game
 		-> Alle Anforderungen werden durchnummeriert.
 		-> Die kleinste Zahl einer Anforderung hat die höchste Priorität, die größte die niedrigste.
-			-> Dadurch ich klar, in welche Reihenfolge die Abarbeitung erfolgen muss.
+			-> Dadurch ist klar, in welche Reihenfolge die Abarbeitung erfolgen muss.
 			-> Einigung über Reihenfolge durch Team Estimation Game
 		-> Vorgehen:
 			-> Sortierkritärium festlegen: Kritärien sind bspw.: Relevanz, Aufwand, Größe, Komplexität. 

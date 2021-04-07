@@ -65,8 +65,8 @@
 	-> Teilprozess: Besteht aus Aktivitäten und Teilprozessen.
 	-> Ereignisse: Startereignis, Ereignis, Endereignis.
 	-> Datenobjekte: Werden zur Ausführung von Aktivitäten gebraucht oder erzeugt (z. B. Schadensakte).
-	-> Pool/Organisationseinheit: Partitioniert Prozesse. Jeder Pool ist ein Teilprozess und benötigt daher ein Start- und Entereignis. Beinhaltet: Rollen, Aktivitäten, Teilprozesse... .
-	-> Können als Black Boxes dargestellt werden.
+	-> Pool/Organisationseinheit: Partitioniert Prozesse. Jeder Pool ist ein Teilprozess und benötigt daher ein Start- und Endereignis. Beinhaltet: Rollen, Aktivitäten, Teilprozesse... .
+		-> Können als Black Boxes dargestellt werden.
 	-> Lanes: Fassen Aufgaben zusammen z. B. Rollen.
 	-> Nachrichten: Nachrichtenflüsse oder als Bestandteil von Ereignissen z. B. Email als Startereignis.
 	-> Annotationen: Notizen, Kommentare.

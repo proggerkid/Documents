@@ -2,12 +2,12 @@
 - Qualitätssicherung der Anforderungen.
 	-> Fehler können sich von der technischen Spezifikation über die Architektur bis hin zum Programmcode fortpflanzen.
 - Kernaktivitäten von Prüfen und Abstimmen
-	-> Prüfkriterien festlegen (nicht alle können geprüft werden, es gibt zu viele wie: Qualität, Funktionalität, Detailebene...)
-	-> Prüfprinzipien und Prüftechniken auswählen.
+	-> Prüfkriterien festlegen (Inhalt, Dokumentation, Abgestimmtheit), also was soll geprüft werden.
+	-> Prüfprinzipien und Prüftechniken auswählen, also wie soll geprüft werden.
 	-> Prüfung durchführen und Ergebnisse dokumentieren.
 	-> Abstimmung der Anforderungen/Konfliktmanagement.
 	
-• Prüfkriterien festlegen (mögliche Kritärien: Qualität, Funktionen, Detailebene...): Im Vorfeld der Prüfung ist festzulegen nach welchen Kriterien genau geprüft werden soll. Im Vorfeld der Prüfung werden die relevanten Prüfkriterien in Abhängigkeit von der Projektsituation bestimmt.
+• Prüfkriterien festlegen: Im Vorfeld der Prüfung ist festzulegen nach welchen Kriterien genau geprüft werden soll. Im Vorfeld der Prüfung werden die relevanten Prüfkriterien in Abhängigkeit von der Projektsituation bestimmt.
 • Prüfprinzipien und Prüftechniken auswählen: Erst nachdem entschieden wurde, welche Prüfkriterien tatsächlich relevant sind, und wenn feststeht, wie viele Ressourcen für die Prüfungen zur Verfügung stehen, werden die zu berücksichtigenden Prüfprinzipien und Prüftechniken ausgewählt.
 • Prüfung durchführen und Ergebnisse dokumentieren: Nach Abschluss der fachlichen Vorbereitung muss die Prüfung organisatorisch geplant werden. Dazu zählen die Organisation der benötigten Infrastruktur, die zeitliche Planung aller Beteiligten und gegebenenfalls die Koordination von externen Gutachtern. Wichtig bei der Durchführung ist dabei die Konzentration auf die Dokumentation der Prüfungsergebnisse.
 • Abstimmen der Anforderungen / Konfliktmanagement: Wurden bei der Prüfung in der Menge der dokumentierten Anforderungen widersprüchliche Aussagen identifiziert oder gibt es Widersprüche zwischen Stakeholdern und dokumentierten Anforderungen, dann müssen diese Widersprüche abgestimmt und gegebenenfalls Konflikte aufgelöst werden.	
@@ -46,8 +46,7 @@
 				-> Oder Prüfer intern.
 	- Prinzip 2: Trennung von Fehlersuche und Fehlerkorrektur
 		-> Konzentration ausschließlich auf Mängel während der Prüfung der Dokumentation.
-				-> Danach: Bewertung der Fehler.
-					-> Erst im Anschluss die Fehler Korregieren.
+				-> Erst im Anschluss die Fehler Korregieren.
 		-> Damit wird sichergestellt, dass die Zeit ausschließlich zum Prüfen und nicht zum Korregieren genutzt wird.
 	- Prinzip 3: Prüfung aus unterschiedlichen Sichten
 		-> Dokummentation soll aus möglicht verschiedenen Gesichtspunkten betrachtet und analysiert werden.
@@ -63,11 +62,11 @@
 
 - Prüftechniken
 	- Stellungnahme
-		-> Unbeteiligte Person ließt Dokumentations durch und bewertet sie hinsichtlich der gewählten Prüfkriterien.
+		-> Unbeteiligte Person ließt Dokumentation durch und bewertet sie hinsichtlich der gewählten Prüfkriterien.
 			-> Mängel werden markiert und kurz begründet.
 			-> Stellungnahme durch Kollegen oder externen Dienstleister.
 	- Walkthrough
-		-> Dokument wird von mehreren Personen gelesen, mögliche Mänger werden in einer Gruppe Diskutiert. 
+		-> Dokument wird von mehreren Personen gelesen, mögliche Mängel werden in einer Gruppe Diskutiert. 
 		-> Benötigte Rollen: Autor, Protokolland, Reviewer
 			-> Durchführung:
 				1. Die dokumentierten Anforderungen werden an die Reviewer verteilt und die relevanten Prüfkriterien benannt.
@@ -126,7 +125,7 @@
 				-> Möglicher zukünftiger Erkenntnisgeweinn der einfache Lösung des Konfliktes bringen kann.
 				-> Vermeidung unnötig langes aufhalten an unwichtigen Anforderungen.
 		- Dokumentation der Könfliktauflösung
-			-> Verhinderung, dass gleich Konflikt erneut auftaucht.
+			-> Verhinderung, dass gleiche Konflikt erneut auftaucht.
 			-> Entsteht der Konflikt dennoch erneut, kann er mit der Dokumentation schnell gelöst werden.
 			-> Ist die Lösung nicht geeignet, können Fehler der Dokumentation entnommen werden und bei einer neuen 
 				Lösungsfindung, diese berücksichtigt werden.

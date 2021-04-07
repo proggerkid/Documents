@@ -23,6 +23,8 @@
 -> Vorherige Datei im Buffer auswählen: :bp
 -> Buffer mit Buffernummer auswählen: :b"nummer"
 -> Buffer löschen: :bd
+-> Alle Buffer Schreiben: :wa
+-> Alle Buffer Schreiben und verlassen: :wqa
 
 --Tabs--
 -> Datei in neuen Tab öffnen: :tabedit "Dateiname"
