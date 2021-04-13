@@ -52,7 +52,7 @@
 	-> Inhalt der Projektvision:
 		-> Zweck und Ziel des Projektes (Was soll mit dem Projekt erreicht werden).
 		-> Motivation für das Projekt (Gründe warum es das Projekt gibt).
-		-> Deteilebene der Anforderungen (Für welche Ziehlgruppe ist das Dokument). 
+		-> Deteilebene der Anforderung (Für welche Ziehlgruppe ist das Dokument). 
 - Überblicksebene
 	-> stellt Hauptfunktionen des Systems, die technischen Schnittstellen, die Nutzer sowie die Einordnung in die Systemlandschaft 			dar.
 - Detaillierte Anforderungen

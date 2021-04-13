@@ -114,22 +114,26 @@
 		-> Betriebssystem verwaltet die Status in der Datenstruktur Prozesskontrollblock, die im RAM abgelegt ist.
 	-> Das Betriebssystem verwaltet die Prozesskontrollblöcke, wobei jeder Prozess einen Prozesskontrollblock besitzt.
 	-> Ist ein Prozess abgeschlossen erfolg ein Systemaufruf, durch den die Kontrolle der CPU and das 
-		Betriebssystem gegeben wird, das dann einen anderen Prozess die CPU-Zeit zur verfügung stellt.
+		Betriebssystem gegeben wird, das dann einen anderen Prozess die CPU zur verfügung stellt.
+	-> Prozesswechsel Beispiel:
+		Prozess sendet Leseaufforderung über Systemaufruf an das OS, OS setzt den Status des Prozesses
+		auf blokiert und entzieht ihm die CPU. OS leitet Leseanfrage and Festplattenkontroller weiter, der
+		selbstständig die Daten von der Festplatte ließt und zwischenspeichert (Buffer). Befinden sich alle
+		Daten im Buffer, sendet der Festplattenkontroller ein Interruptsignal, mit hilfe des Interrupt-Kontrollers,
+		an den Prozessor. Das OS erhält wieder Kontrolle über die CPU und stellt dem Prozess die Daten zur 
+		Verfügung und setzt seinen Status auf bereit. Irgendwann wird dem Prozess die CPU zur Verfügung gestellt und
+		zwar dann, wenn ein anderer Prozess ein Systemcall macht und der Prozess bspw. an der Reihe Ist.	
 		-> Durch Speicherung des Programmzählers, kann der Prozess an der richtigen stelle weiter 
 			verarbeitet werden.
 	-> Bei jedem Prozesswechsel speichert die CPU den Inhalt des Programmzählers, sodass das Betriebssystem
 		 den Inhalt in dem Prozesskontrollblock des Prozesses im RAM speichern kann.
 		 -> Die CPU trägt bei einem Wechsel den Wert (Adresse im RAM) in das Programmzählerregister ein, womit die CPU 
 		 	mit der Abarbeitung beginnt.
+	-> Problem: nur bei einem Systemaufruf wird dem Prozess die CPU entzogen. Dadurch können bspw. Endlosschleifen die CPU
+		blockieren.
+		->Präemptives Multitasking wird benötigt um dem entgegen zu wirken.
 	-> Multitasking: Mehrere Prozesse werden durch Prozesswechsel "gleichzeitig" ausgeführt.
 	-> Multiprozessing: Gleichzeitige ausführung von Befehlen eines Prozesses durch Threads.
-- Prozesszustände und derne Übergänge
-	-> Beispiel: Prozess fordert Daten von der Festplatte durch ein Systemcall an.
-		Das Betriebssystem setzt dann den Zustand des Prozesses im Prozesskontrollblock des Prozesses auf Blockiert.
-		Das Betriebssystem leitet die Leseanfrage, über die CPU, an den Festplattencontroller weiter. Dieser
-		Ließt die Daten und speichert sie in einem Buffer zwischen.
-		Dann sendet Der Festplattencontroller ein Interruptsignal an die CPU. Das Betriebssystem stellt die 
-		Daten dem Prozess zur verfügung. Der Zustand wird jetzt von blockiert auf bereit gesetzt.
 - Präemptives Multitasking
 	-> Vor der Übergabe der CPU an ein Prozess wird ein "HW-Wecker" aufgezogen. Bei ablauf des Weckers, löst der
 		Interrupt-Controller automatisch eine Unterbrechung aus und das Betriebssystem bekommt die Kontrolle
@@ -169,7 +173,9 @@
 		HW-Adresse umgerechnet werden müssen, also umrechnung bevor sie auf den Adressbus gelegt werden.
 		-> Umrechnung durch Memory Management Unit der CPU (MMU).
 			-> Größenregister: Länge des bewilligten Adressraums.
-			-> Verschieberegister: Startadresse.
+			-> Verschieberegister: Startadresse des Prtogramms.
+				-> Beispiel: Verschieberegister ist bei Adresse 64 und das Größenregister bei 256.
+					
 		-> Nachteil: Keine dynamische Speicherverwaltung... virtuelle Speicherverwaltung wird dazu benötigt.
 - Virtuelle Speicherverwaltung
 	-> Dynamische Speicherverwaltung möglich.
