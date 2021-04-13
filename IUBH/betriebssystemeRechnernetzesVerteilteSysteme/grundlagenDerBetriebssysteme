@@ -167,9 +167,12 @@
 - Logische und Physische Speicheradressen
 	-> CPU verarbeitet Prozesse mit logischen Adressen die, wenn Speicherzellen angesprochen werden, in physische
 		HW-Adresse umgerechnet werden müssen, also umrechnung bevor sie auf den Adressbus gelegt werden.
+	-> Die logische Adresse eines Prozesses beginnt immer bei NULL.
 		-> Umrechnung durch Memory Management Unit der CPU (MMU).
 			-> Größenregister: Länge des bewilligten Adressraums.
-			-> Verschieberegister: Startadresse.
+				-> Ist der Inhalt des Größenregisters kleiner als die Physische Adresse, wurde eine Speicherschutzverletzung begangen.
+			-> Verschieberegister: Startadresse, also NULL.
+				-> Umrechnung: Verschieberegister mit 
 		-> Nachteil: Keine dynamische Speicherverwaltung... virtuelle Speicherverwaltung wird dazu benötigt.
 - Virtuelle Speicherverwaltung
 	-> Dynamische Speicherverwaltung möglich.
