@@ -10,13 +10,13 @@
 	den Switcht, an den Router/Computer (wird auch Gateway genannt). Dieser
 	leitet das Paket, über seine zweite Netzwerkkarte, an den ISP weiter bzw. an
 	den nächsten Router.  
-	Außerdem muss ein Computer innerhalb eines Netzes ein ARP-Request machen (Schicht 2).
+	Außerdem muss ein Computer innerhalb eines Netzes ein ARP-Request machen (Schicht 3).
 		-> Dabei sendet ein Computer ein Frame an alle LAN-Teilnehmer.
 			Entpackt der Computer, für den das Paket bestimmt war den 
 			IP-Header (destination-ip korrekt), Speichert er 
 			in seiner ARP-Tabelle die IP und zugehörige MAC des Senders.
 			Dann sendet er ein Response mittels der MAC an den Sender
-			(Switch-Tabelle steht MAC mit zugehörigem Port), der 
+			(in Switch-Tabelle steht MAC mit zugehörigem Port), der 
 			ebenfalls ip und MAC in seiner ARP-Tabelle speichert.
 			Jetzt können die Computer Daten, über die MAC-Adresse, austauschen.
 -> IP ist ein Protokoll, wird aber als synonym für die IP-Adresse verwendet, welche IP

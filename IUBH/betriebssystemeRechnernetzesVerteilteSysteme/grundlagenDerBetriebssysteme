@@ -1,6 +1,4 @@
 -----Grundlegender Aufbau von Computersystemen-----
-- Ein Computer erfüllt eine Funktion wie eine Uhr, wobei die Zahnräder einer Uhr mit Kinetischer Energie betrieben wird und
-	die Transistoren eines Computers mit Elektronen.
 - CPU holt Befehle, wie eine Maschine, in Form von Maschinencode, aus dem Speicher und führt diese aus. Diesen Zyklus wiederholt die CPU bis der Computer ausgeschalten wird.
 	-> Einen Zyklus nennt man Von-Neumann-Zyklus.
 	-> Den Aufbau eines Computers/Rechners nennt man Von-Neumann-Architektur.
@@ -76,15 +74,17 @@
 		-> Bei einem Systemaufruf wird in den Betriebssystemmodus (Kernel Mode) gewechselt. Dabei Kommuniziert
 			Das Betriebssystem mit der CPU. Anschließend wir in den Anwerndermodus gewechselt, in dem Maschinencode
 			ausgeführt wird, der nicht auf die HW zugreift.
-	-> Systemaufrufe sind in Systembibliotheken gekapselt und stellen die
-		Schnittstellen für Systemaufrufe dar. Anwendungen greifen auf diese zu (Systemaufruf). 
+	-> Systemaufrufe sind in Systembibliotheken gekapselt und stellen die Schnittstellen 
+		für Systemaufrufe dar. Systembibliotheken befinden sich im User-Mode. 
+		Anwendungen greifen auf diese zu (Systemaufruf). 
 			-> In diesen Systembibliotheken sind Funktionen, die das Programm aufruft, das ist dann
-				ein Systemaufruf. Die Funktionen senden also die Maschinenbefehle an die CPU.
+				ein Systemaufruf. Die Funktionen veranlassen das OS Maschinenbefehle an die CPU zu senden.
+		Der Kernel veranlasst dann, über einen Maschinenbefehl, dass die CPU in den Kernel-Mode schaltet.
+		Das OS sendet dann, für die Anwendung, die Maschinenbefehle an die CPU.
 	-> Spezielle Maschinenbefehle der jeweiligen Prozessorfamilien veranlassen die CPU in den User- Kernel-Mode 
 		zu wechseln.
 	-> Eine Anwendung greift, wenn sie einen Systemaufruf macht, auf eine Funktion in der Systembibliothek zu, Dies
 		geschieht noch im User-Mode.
-		Der Kernel veranlasst dann, über einen Maschinenbefehl, dass die CPU in den Kernel-Mode schaltet.
 		Dann senden bspw. Treiber oder der Kernel selbst Maschinenbefehle an die CPU oder GPU.
 		Die CPU sendet dann die Befehle an die jeweilige HW.
 - Interrupt
@@ -113,7 +113,7 @@
 		 bspw. der Stand des Programmzählers.
 		-> Betriebssystem verwaltet die Status in der Datenstruktur Prozesskontrollblock, die im RAM abgelegt ist.
 	-> Das Betriebssystem verwaltet die Prozesskontrollblöcke, wobei jeder Prozess einen Prozesskontrollblock besitzt.
-	-> Ist ein Prozess abgeschlossen erfolg ein Systemaufruf, durch den die Kontrolle der CPU and das 
+	-> Ist ein Prozess abgeschlossen erfolg ein Systemaufruf, durch den die Kontrolle der CPU an das 
 		Betriebssystem gegeben wird, das dann einen anderen Prozess die CPU zur verfügung stellt.
 	-> Prozesswechsel Beispiel:
 		Prozess sendet Leseaufforderung über Systemaufruf an das OS, OS setzt den Status des Prozesses
@@ -147,6 +147,8 @@
 			-> Threads werden wie Prozesse vom Betriebssystem behandelt.
 			-> Können auch auf zwei oder mehreren Kernen zur Ausführung gebracht werden. 
 ----- Speicherverwaltung -----
+	-> Programme können, durch Funktionen von Betriebssystemen, Speicher allokieren (Anfordern) und wieder frei geben.
+		Verwaltung welche Speicherbereiche frei sind findet im System statt.
 	-> OS verwaltet den Speicher durch Abstraktion.
 		-> Ein Prozess "glaubt", beim Präemptiven Multitasking, ihm gehöre alleine die CPU und ein Prozess "glaubt" 
 			ihm gehöre allein der Speicher.
@@ -174,19 +176,61 @@
 	-> Die logische Adresse eines Prozesses beginnt immer bei NULL.
 		-> Umrechnung durch Memory Management Unit der CPU (MMU).
 			-> Größenregister: Länge des bewilligten Adressraums.
-			-> Verschieberegister: Startadresse des Prtogramms.
-				-> Beispiel: Verschieberegister ist bei Adresse 64 und das Größenregister bei 256.
-				-> Ist der Inhalt des Größenregisters kleiner als die Physische Adresse, 
-					wurde eine Speicherschutzverletzung begangen.
+				-> Ist der vom Prozess geforderte Adressraum größer als der Wert im Größenregister,
+					liegt eine Speicherschutzverletzung vor. Das OS bekommt dann die Kontrolle über die
+					CPU und muss die Ausnahme behandeln.
 			-> Verschieberegister: Startadresse, also NULL.
-				-> Umrechnung: Verschieberegister mit 
+				-> Umrechnung: Verschieberegister mit physikalischer Startadresse des Blocks addieren.
 		-> Nachteil: Keine dynamische Speicherverwaltung... virtuelle Speicherverwaltung wird dazu benötigt.
+			-> Befindet sich zwischen dem Prozess der Speicher allokieren will und dem nächsten Prozess nicht mehr
+				ausreichend Platz, kann der Prozess keinen weiteren Speicher allokieren.	
 - Virtuelle Speicherverwaltung
 	-> Dynamische Speicherverwaltung möglich.
 	-> realisierung durch Paging.
 		-> Hauptspeicher wird in Seiten (Pages) eingeteilt.
 			-> werden vom Betriebssystem, im zusammenspiel mit der MMU, in Form von Tabellen, verwaltet.
 		-> In der Tabelle Steht, welcher Speicherblock bzw. welche Seite, an welcher Stelle im Speicher liegt.
+		-> Jede Seite hat eine Adresse.
 	-> Blöcke: der Physische Hauptspeicher wird in Blöcke eingeteilt.
 		-> Blöcke nennt man Kacheln oder Seitenrahmen (Pageframe).
 			-> Auf jede Kachel kann genau eine Seite abgelegt werden (Sie haben beide die selbe größe).
+		-> Startadresse von Pageframes sind immer ein Vielfaches der Pageframes z. B. Startadresse von
+			pageframe 5 wäre, wenn jeder Pageframe 8 bit groß wäre, 5*8 also 40. 
+	-> Eine virtuelle Adresse besteht aus zwei teilen:
+		-> Seitennummer: Intex für den Eintrag in der Pagetable.
+			-> Seitennummer in der Pagetabelle verweißt auf Pageframe.
+		-> Offset: Gibt die Distanz von der Startadresse einer Seite zur entsprechenden Adresse
+			in der Seite bzw. Segment an. 
+			-> Beispiel: 0100|000101, der erste Teil ist die Seitennummer, der zweite der Offset.
+				0100 verweißt in der Seitentabelle bspw. auf die Adresse 0111 (die Adressen sind eigentlich
+				10 bit lang, die restlichen 6 bit kommen gleich noch hinzu). 
+				Die gewünschte Adresse in der Seite ist noch 000101 entfernt, also muss
+				der Offset einfach angehängt werden. 
+				Die Adresse lautet also: 0111|000101.
+	-> Demand Paging
+		-> Erst bei bedarf (demand) werden Seiten in den Hauptspeicher eingelesen. Bei zu vollem
+			Speicher können sie auch wieder auf die Festplatter ausgelagert werden.
+- Dateisysteme
+	-> Im RAM können bereits 8 Bit, also 1 Byte, Adressiert werden. Bei Blockdevices, wie die Festplatte,	
+		sind es mehrere Kilobyte, meist 512 Byte.
+	-> Das OS Arbeitet mit logischen Blockadressen (LBA).
+		-> Das übersetzen der logischen Adressen in physische, obliegt dem Festplattencontroller.
+	-> Dateisysteme
+		-> Sind Schnittstellen zwischen OS und den Angeschlossenen Speichermedien.
+		-> Wurde eine Festplatte Formatiert, braucht das OS das entsprechende Dateisystem um von der Festplatte 
+			lesen zu können.
+		-> Das Dateisystem definiert Dateinamenskonventionen, Dateiattribute oder die Zugriffskontrolle	
+	-> I-Node
+		-> I-Nodes sind Datenstrukturen.
+		-> Ein I-Node beschreibt eine Datei oder ein Ordner.
+		-> Enthält Metadaten über eine Datei oder Ordner.
+			-> z. B. Größe, Zugriffsrechte, Verweise auf Datenblöcke zu den Inhalten einer Datei.
+		-> Eindeutig über ID adressiert.
+		-> Sind in Datenblöcke gespeichert, genauso wie Dateien nur an anderer Stelle.
+		-> Verweise werden in einer Liste in der I-Node-Datenstruktur gespeichert.
+			Wenn die Datei so groß wird, dass die Liste nicht mehr ausreicht, verweisen die verweise 
+			auf Blöcke die ebenfalls Verweise haben.
+	-> Verzeichnisse
+		-> Ist eine Datei mit einer Tabelle von Dateinamen und I-Node-Adressen.
+			-> Dateinamen werden I-Node-Adressen zugeordnet, die die Einstiegspunke zu den Informationen der Dateien
+				liefern.
