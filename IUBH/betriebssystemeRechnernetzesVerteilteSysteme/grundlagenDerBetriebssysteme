@@ -49,7 +49,7 @@
 	- Nicht nur Berechnung von zwei Operanden in einem Taktschritt sondern Berechnung von vielen Operanden gleichzeitig.
 		-> Vektoreinheiten der Vektorverarbeitung bei x86-Architekturen sind: MMX, SSE, AVX... .
 			-> Erweiterung von Vektorbefehlen und Vektorregister.
-	- Parallele Verarbeitung also durch: Pipelining und Vektorverarbeitung aber auch Multicorsystemen.
+	- Parallele Verarbeitung also durch: Pipelining und Vektorverarbeitung aber auch Multicoresystemen.
 - Speicherhierarchie: Rigister 1ns, lvl1-cache 2ns, lvl2-cache 5ns, RAM 10ns, hdd 1000ns.  
 - Die Rolle des Betriebssystems
 	-> Laden der Programme in den Arbeitsspeicher.
